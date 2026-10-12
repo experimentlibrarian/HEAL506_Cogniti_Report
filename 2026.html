@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Usage and survey findings for the HEAL506 Te Whatu Aho Rau Source Evaluator, Semesters 1 and 2, 2026. Te Matapuna Library and Learning Services, AUT.">
+<meta name="description" content="Te Whatu Aho Rau Source Evaluator: how HEAL506 students used the agent, what they said about it, and what we would change. Te Matapuna Library and Learning Services, AUT, 2026.">
 <meta name="author" content="Camilo Amaya Lara">
 <title>Te Whatu Aho Rau Source Evaluator</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght400;600&family=IBM+Plex+Serif:ital,wght0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 html,body{margin:0}
@@ -15,75 +15,47 @@ img{max-width:100%}
 </style>
 
 <style>
-/* Layout: sticky contents rail beside one measured reading column; every data figure switches between chart and table. */
 :root{
-  --paper:#fbfaf7; --surface:#ffffff; --ink:#1a1c1e; --ink-2:#4b4f53; --muted:#7d8186;
-  --teal:#00707d; --teal-deep:#005b66; --wash:#eaf4f6; --rule:#e4e1da;
-  --bar:#00707d; --bar-2:#c0592b; --grid:#edeae3; --focus:#00707d;
-  --m0:#00707d; --m1:#4ba0ab; --m2:#a9d2d8; --m3:#cfcbc2;
+  --paper:#ffffff; --surface:#ffffff; --ink:#1a1c1e; --ink-2:#4b4f53; --muted:#6f7478;
+  --teal:#00707d; --teal-deep:#00565f; --wash:#eaf4f6; --rule:#ddd9d2; --grid:#eceae4;
+  --focus:#00707d;
+  --m0:#00565f; --m1:#2d8591; --m2:#8fc5cd; --m3:#c9c5bd;
+  --c1:#00565f; --c2:#a87fe0; --due:#c2410c;
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#15171a; --surface:#1c1f23; --ink:#f2f0ec; --ink-2:#c3c2bb; --muted:#9a9c9f;
-  --teal:#4fbecb; --teal-deep:#7fd3dd; --wash:#1b2c30; --rule:#30343a;
-  --bar:#2a93a1; --bar-2:#d4733f; --grid:#282c31; --focus:#4fbecb; color-scheme:dark;
-  --m0:#5fc3d1; --m1:#2d8e9e; --m2:#1d5a64; --m3:#4a4e52;
+  --paper:#15171a; --surface:#1d2024; --ink:#f2f0ec; --ink-2:#c6c4be; --muted:#9ea1a4;
+  --teal:#5cc6d3; --teal-deep:#8ad9e3; --wash:#1b2c30; --rule:#333740; --grid:#2a2e33;
+  --focus:#5cc6d3; --m0:#8ad9e3; --m1:#3f9fad; --m2:#1f6069; --m3:#565a5e;
+  --c1:#2fa7b8; --c2:#d9bdff; --due:#ff9a52;
+  color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --paper:#15171a; --surface:#1c1f23; --ink:#f2f0ec; --ink-2:#c3c2bb; --muted:#9a9c9f;
-  --teal:#4fbecb; --teal-deep:#7fd3dd; --wash:#1b2c30; --rule:#30343a;
-  --bar:#2a93a1; --bar-2:#d4733f; --grid:#282c31; --focus:#4fbecb; color-scheme:dark;
-  --m0:#5fc3d1; --m1:#2d8e9e; --m2:#1d5a64; --m3:#4a4e52;
+  --paper:#15171a; --surface:#1d2024; --ink:#f2f0ec; --ink-2:#c6c4be; --muted:#9ea1a4;
+  --teal:#5cc6d3; --teal-deep:#8ad9e3; --wash:#1b2c30; --rule:#333740; --grid:#2a2e33;
+  --focus:#5cc6d3; --m0:#8ad9e3; --m1:#3f9fad; --m2:#1f6069; --m3:#565a5e;
+  --c1:#2fa7b8; --c2:#d9bdff; --due:#ff9a52;
+  color-scheme:dark;
 }
-
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
-  font-size:18px;line-height:1.72;-webkit-text-size-adjust:100%}
-:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+  font-size:18px;line-height:1.7;-webkit-text-size-adjust:100%}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
+.skip{position:absolute;left:-9999px;top:0;background:var(--teal);color:#fff;
+  padding:10px 16px;z-index:50;font-family:var(--sans);font-size:15px;border-radius:0 0 3px 0}
+.skip:focus{left:0}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:0 72px}
-
-header.mast{padding-block:56px 28px;border-bottom:3px solid var(--teal)}
+header.mast{padding-block:52px 26px;border-bottom:3px solid var(--teal)}
 .eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--teal-deep);margin:0 0 16px}
-h1{font-family:var(--sans);font-weight:600;font-size:clamp(28px,5vw,44px);line-height:1.12;
+  text-transform:uppercase;color:var(--teal-deep);margin:0 0 15px}
+h1{font-family:var(--sans);font-weight:600;font-size:clamp(28px,5vw,43px);line-height:1.12;
   letter-spacing:-.018em;margin:0 0 12px;text-wrap:balance}
-.standfirst{font-size:clamp(17px,2.2vw,20px);color:var(--ink-2);margin:0 0 20px;text-wrap:pretty}
+.standfirst{font-size:clamp(17px,2.2vw,20px);color:var(--ink-2);margin:0 0 18px;text-wrap:pretty}
 .byline{font-family:var(--sans);font-size:13.5px;color:var(--muted);margin:0}
-
-/* key findings */
-.keys{margin-top:34px;padding:26px 0 4px;border-bottom:1px solid var(--rule)}
-.keys h2{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--teal-deep);margin:0 0 20px;border:none;padding:0}
-.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 28px}
-@media (max-width:1040px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:620px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:400px){.stats{grid-template-columns:1fr}}
-.stat{min-width:0}
-.stat .fig{font-family:var(--sans);font-size:31px;font-weight:600;line-height:1.05;
-  color:var(--teal-deep);letter-spacing:-.02em;display:block}
-.stat .lab{font-family:var(--sans);font-size:13px;color:var(--ink-2);line-height:1.38;
-  display:block;margin-top:5px}
-.keys .takeaway{font-size:16.5px;color:var(--ink);margin:24px 0 18px}
-.scale{display:flex;flex-wrap:wrap;gap:10px 30px;margin:0 0 26px;padding-bottom:20px;
-  border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:13.5px;color:var(--ink-2)}
-.scale b{color:var(--teal-deep);font-weight:600;font-size:16px;margin-right:5px}
-.kf-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px 36px}
-.kf{min-width:0}
-.kf h3{font-family:var(--sans);font-size:15.5px;font-weight:600;margin:0 0 5px;
-  color:var(--ink);line-height:1.32;text-wrap:balance}
-.kf p{font-size:15.5px;color:var(--ink-2);margin:0;line-height:1.52}
-.src{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:600;
-  letter-spacing:.07em;text-transform:uppercase;color:var(--teal-deep);background:var(--wash);
-  border:1px solid var(--rule);border-radius:2px;padding:2px 7px;margin:0 0 7px;white-space:nowrap}
-.src.one{color:var(--ink-2)}
-li .src,.rec .src{margin:0 0 0 8px;vertical-align:2px}
-
-.shell{display:grid;grid-template-columns:224px minmax(0,1fr);gap:54px;align-items:start;margin-top:40px}
-@media (max-width:900px){.shell{grid-template-columns:1fr;gap:0;margin-top:24px}}
-
+.shell{display:grid;grid-template-columns:224px minmax(0,1fr);gap:54px;align-items:start;margin-top:36px}
+@media (max-width:900px){.shell{grid-template-columns:1fr;gap:0;margin-top:22px}}
 nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 22px);font-family:var(--sans);font-size:13.5px}
 nav.toc>h2{font-size:11.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
   color:var(--muted);margin:0 0 12px;border:none;padding:0}
@@ -95,1023 +67,453 @@ nav.toc a.on{color:var(--teal-deep);border-left-color:var(--teal);font-weight:60
 nav.toc .sub a{padding-left:22px;font-size:12.5px}
 nav.toc summary{display:none}
 @media (max-width:900px){
-  nav.toc{position:static;margin:0 0 26px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+  nav.toc{position:static;margin:0 0 24px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
   nav.toc>h2{display:none}
   nav.toc summary{display:block;font-size:12px;font-weight:600;letter-spacing:.09em;
     text-transform:uppercase;color:var(--teal-deep);padding:12px 14px;cursor:pointer}
   nav.toc ol{padding:0 14px 14px}
 }
-
 main{min-width:0}
-h2{font-family:var(--sans);font-weight:600;font-size:clamp(22px,3.1vw,29px);line-height:1.2;
-  letter-spacing:-.012em;margin:56px 0 4px;padding-top:26px;border-top:1px solid var(--rule);text-wrap:balance}
+h2{font-family:var(--sans);font-weight:600;font-size:clamp(23px,3.2vw,30px);line-height:1.2;
+  letter-spacing:-.012em;margin:52px 0 6px;padding-top:26px;border-top:1px solid var(--rule);
+  color:var(--teal-deep);text-wrap:balance}
 h2:first-child{margin-top:0;border-top:none;padding-top:0}
-h3{font-family:var(--sans);font-weight:600;font-size:clamp(18px,2.4vw,21px);line-height:1.28;
-  margin:40px 0 10px;text-wrap:balance}
-h4{font-family:var(--sans);font-weight:600;font-size:16.5px;margin:30px 0 8px;text-wrap:balance}
-p{margin:0 0 17px}
-main ul,main ol{margin:0 0 15px;padding-left:1.25em}
-main li{margin-bottom:10px}
-strong,b{font-weight:600}
-.tag{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--teal-deep);margin:14px 0 6px}
-.qmeta{font-family:var(--sans);font-size:13px;color:var(--muted);margin:-4px 0 14px}
-
-/* data figure with chart / table switch */
-figure{margin:28px 0 32px}
-.viz{border:1px solid var(--rule);border-radius:3px;background:var(--surface);overflow:hidden}
-.viz-head{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;justify-content:space-between;
-  padding:15px 17px 12px;border-bottom:1px solid var(--rule)}
-.viz-title{font-family:var(--sans);font-size:15px;font-weight:600;margin:0;color:var(--ink);max-width:52ch}
-.viz-sub{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:2px 0 0}
-.seg{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;flex:0 0 auto}
-.seg button{font-family:var(--sans);font-size:12px;font-weight:600;padding:5px 12px;border:0;
-  background:transparent;color:var(--ink-2);cursor:pointer;line-height:1.6}
-.seg button+button{border-left:1px solid var(--rule)}
-.seg button[aria-pressed="true"]{background:var(--teal);color:#fff}
-:root[data-theme="dark"] .seg button[aria-pressed="true"],
-:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#10191b}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .seg button[aria-pressed="true"]{color:#fff}}
-:root[data-theme="light"] .seg button[aria-pressed="true"]{color:#fff}
-.pane{padding:18px 17px 16px}
-.pane.t{padding:0;overflow-x:auto}
-
-/* horizontal bars */
-.rows{display:flex;flex-direction:column;gap:9px}
-.row{display:grid;grid-template-columns:minmax(0,13.5em) minmax(0,1fr);gap:12px;align-items:center}
-@media (max-width:620px){.row{grid-template-columns:1fr;gap:2px}}
-.row-label{font-family:var(--sans);font-size:12.8px;color:var(--ink-2);line-height:1.3}
-.track{display:flex;align-items:center;gap:9px;min-width:0}
-.bar{height:15px;background:var(--bar);border-radius:1px;min-width:2px;flex:0 0 auto;
-  width:calc(var(--w,0) * (100% - var(--reserve,4.8rem)))}
-.bar.b2{background:var(--bar-2)}
-.val{font-family:var(--sans);font-size:12px;color:var(--muted);white-space:nowrap;
+h3{font-family:var(--sans);font-weight:600;font-size:clamp(19px,2.5vw,22px);line-height:1.28;
+  margin:40px 0 8px;color:var(--teal-deep);text-wrap:balance}
+h4{font-family:var(--sans);font-weight:600;font-size:17px;margin:30px 0 8px;text-wrap:balance}
+h3.numbered{counter-increment:num;margin:30px 0 8px;font-size:17px;color:var(--ink)}
+h3.numbered::before{content:counter(num) ". ";color:var(--teal);font-variant-numeric:tabular-nums}
+#conclusions~*,#recommendations~*{counter-reset:none}
+h2#conclusions,h2#recommendations{counter-reset:num}
+p{margin:0 0 16px}
+main ul,main ol{margin:0 0 16px;padding-left:1.3em}
+main li{margin-bottom:7px}
+ul.src{list-style:none;padding-left:0}
+ul.src li{border-left:3px solid var(--teal);padding-left:14px}
+ol.qs li{margin-bottom:5px;font-size:16.5px;color:var(--ink-2)}
+.tag{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--teal-deep);margin:12px 0 14px}
+blockquote{margin:18px 0;padding:0 0 0 17px;border-left:3px solid var(--teal)}
+blockquote p{font-style:italic;color:var(--ink);margin:0 0 4px}
+blockquote cite{font-family:var(--sans);font-style:normal;font-size:12.5px;color:var(--muted)}
+figure.fig{margin:24px 0 30px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;
   font-variant-numeric:tabular-nums}
-.val b{color:var(--ink-2);font-weight:600}
-.pairs{display:flex;flex-direction:column;gap:3px;min-width:0}
-.legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--sans);font-size:12.3px;
-  color:var(--ink-2);margin:0 0 14px}
-.legend i{display:inline-block;width:11px;height:11px;border-radius:1px;margin-right:6px;vertical-align:-1px}
-
-/* column chart */
-svg.col{display:block;width:100%;height:auto;font-family:var(--sans)}
-svg.col .g{stroke:var(--grid);stroke-width:1}
-svg.col .b{fill:var(--bar)}
-svg.col .b.hi{fill:var(--teal-deep)}
-svg.col .vl{fill:var(--ink-2);font-size:10.5px;font-weight:600;text-anchor:middle}
-svg.col .xl{fill:var(--muted);font-size:10.5px;text-anchor:middle}
-svg.col .yl{fill:var(--muted);font-size:10px;text-anchor:end}
-svg.col .ax{fill:var(--muted);font-size:10px;text-anchor:start}
-
-/* tables */
-table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;
-  font-variant-numeric:tabular-nums}
-thead th{background:var(--teal);color:#fff;font-weight:600;text-align:left;padding:9px 13px;
-  font-size:12.5px;white-space:nowrap}
-:root[data-theme="dark"] thead th,
-:root:not([data-theme="light"]) thead th{color:#10191b}
+caption{text-align:left}
+thead th{background:var(--teal);color:#fff;font-weight:600;text-align:left;padding:10px 14px;
+  font-size:12.5px}
+:root[data-theme="dark"] thead th,:root:not([data-theme="light"]) thead th{color:#0f1a1c}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) thead th{color:#fff}}
 :root[data-theme="light"] thead th{color:#fff}
 thead th.r,td.r{text-align:right}
-tbody td{padding:8px 13px;border-bottom:1px solid var(--rule);color:var(--ink)}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--rule);color:var(--ink)}
 tbody tr:last-child td{border-bottom:none}
-tbody tr.hi td{background:var(--wash);font-weight:600}
-tbody td.ind{padding-left:30px;color:var(--ink-2);font-size:12.8px;font-weight:400}
-.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
-figcaption{font-family:var(--sans);font-size:12.5px;color:var(--muted);
-  line-height:1.45;margin-top:9px}
+tbody td.ind{padding-left:32px;color:var(--ink-2);font-size:13.2px}
+figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5;
+  padding:11px 14px;border-top:1px solid var(--rule)}
 figcaption b{color:var(--ink-2);font-weight:600}
-.sub-note{font-size:12px;color:var(--muted);line-height:1.4;display:inline-block;margin-top:3px}
+.viz-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;
+  padding:10px 14px;border-bottom:1px solid var(--rule)}
+.viz-head>div:first-child{min-width:0;margin-right:auto;font-family:var(--sans);
+  font-size:13px;color:var(--muted)}
 
-blockquote{margin:18px 0;padding:0 0 0 17px;border-left:3px solid var(--teal)}
-blockquote p{font-style:italic;color:var(--ink);margin:0 0 4px}
-blockquote cite{font-family:var(--sans);font-style:normal;font-size:12.3px;color:var(--muted)}
-.note{background:var(--wash);border-left:3px solid var(--teal);padding:17px 20px;
-  margin:26px 0;border-radius:0 3px 3px 0}
-.note h4{margin:0 0 7px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-deep)}
-.note p{margin:0 0 9px;font-size:16px}
-.note p:last-child{margin-bottom:0}
 
-.recs{display:flex;flex-direction:column;margin-top:22px}
-.rec{display:grid;grid-template-columns:auto minmax(0,1fr);gap:15px;padding:16px 0;border-top:1px solid var(--rule)}
-.rec:last-child{border-bottom:1px solid var(--rule)}
-.rec .n{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--teal);
-  font-variant-numeric:tabular-nums;padding-top:2px}
-.rec h3{margin:0 0 6px;font-size:16.5px}
-.rec p{margin:0 0 7px;font-size:16px}
-.ev{font-family:var(--sans);font-size:12.2px;color:var(--muted);display:block;line-height:1.5}
-.acts{margin:0 0 9px;padding-left:1.15em}
-.acts li{font-size:15.5px;color:var(--ink-2);margin-bottom:5px;line-height:1.5}
-
-footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--rule);
-  font-family:var(--sans);font-size:13px;color:var(--muted)}
-footer p{margin:0 0 8px}
-
-/* depth + semester controls */
-.ctrls{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between;
-  margin:0;padding:16px 0 18px;border-bottom:1px solid var(--rule);
-  position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:20}
-.ctrl{display:flex;align-items:center;gap:10px;min-width:0}
-.ctrl>span{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.seg2{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--surface)}
-.seg2 button{font-family:var(--sans);font-size:12.5px;font-weight:600;padding:6px 13px;border:0;
-  background:transparent;color:var(--ink-2);cursor:pointer;line-height:1.5;white-space:nowrap}
-.seg2 button+button{border-left:1px solid var(--rule)}
-.seg2 button[aria-pressed="true"]{background:var(--teal);color:#fff}
-:root[data-theme="dark"] .seg2 button[aria-pressed="true"],
-:root:not([data-theme="light"]) .seg2 button[aria-pressed="true"]{color:#10191b}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .seg2 button[aria-pressed="true"]{color:#fff}}
-:root[data-theme="light"] .seg2 button[aria-pressed="true"]{color:#fff}
-.seg2 button small{display:block;font-weight:400;font-size:10.5px;opacity:.75;letter-spacing:0}
-
-/* findings front */
-.verdict{font-size:clamp(19px,2.6vw,23px);line-height:1.45;margin:26px 0 20px;
-  color:var(--ink);font-family:var(--serif);text-wrap:pretty}
-.verdict b{color:var(--teal-deep);font-weight:600}
-.find{padding:30px 0;border-top:1px solid var(--rule)}
-.find:first-of-type{border-top:none}
-.find-h{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;margin:0 0 10px}
-.find-n{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;
-  color:var(--teal);text-transform:uppercase}
-.find h3{font-family:var(--sans);font-size:clamp(18px,2.3vw,21px);font-weight:600;
-  margin:0;line-height:1.3;flex:1 1 100%;text-wrap:balance}
-.find p{margin:0 0 14px}
-.find .fq{font-size:16px;font-style:italic;color:var(--ink-2);border-left:3px solid var(--teal);
-  padding-left:15px;margin:14px 0 0;max-width:62ch}
-.find .fq cite{display:block;font-family:var(--sans);font-style:normal;font-size:12.3px;
-  color:var(--muted);margin-top:4px}
-.sem-note{font-family:var(--sans);font-size:12.5px;color:var(--muted);
-  background:var(--wash);border-radius:3px;padding:8px 12px;margin:0 0 14px}
-
-/* stacked timeline */
-svg.stack{display:block;width:100%;height:auto;font-family:var(--sans)}
-svg.stack .g{stroke:var(--grid);stroke-width:1}
-svg.stack .due{stroke:var(--bar-2);stroke-width:1.5;stroke-dasharray:4 3}
-svg.stack .duet{fill:var(--bar-2);font-size:10.5px;font-weight:600}
-svg.stack .xl{fill:var(--muted);font-size:10.5px;text-anchor:middle}
-svg.stack .xl{paint-order:stroke fill;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
-svg.stack .yl{fill:var(--muted);font-size:10px;text-anchor:end}
-svg.stack .ax{fill:var(--muted);font-size:10px;text-anchor:start}
-svg.stack .s0{fill:var(--m0)} svg.stack .s1{fill:var(--m1)}
-svg.stack .s2{fill:var(--m2)} svg.stack .s3{fill:var(--m3)}
-.mlegend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--sans);font-size:12.3px;
+figure.cmp{--m0:var(--c1);--m1:var(--c2)}
+.due-line{stroke:var(--due);stroke-width:2;stroke-dasharray:5 4}
+.due-tag{fill:var(--due);font-family:var(--sans);font-size:12px;font-weight:700}
+.themebar{display:flex;align-items:center;justify-content:flex-end;gap:9px;
+  padding-top:16px;margin-bottom:-14px}
+.themebar span{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted)}
+.themebar .seg{background:var(--surface)}
+.themebar .seg button{font-size:11.5px;padding:5px 11px}
+@media (max-width:760px){.themebar{padding-top:12px}
+  .themebar .seg button{padding:4px 9px;font-size:11px}}
+@media print{.themebar{display:none}}
+.pane-note{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.5}
+.viz-ttl .t{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink-2);line-height:1.35}
+.viz-ttl .s{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:2px}
+figure.viz>.scroll{display:none}
+.seg{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;flex:0 0 auto}
+.seg button{font-family:var(--sans);font-size:12.5px;font-weight:600;padding:6px 13px;border:0;
+  background:transparent;color:var(--ink-2);cursor:pointer;line-height:1.5}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--teal);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#0f1a1c}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .seg button[aria-pressed="true"]{color:#fff}}
+:root[data-theme="light"] .seg button[aria-pressed="true"]{color:#fff}
+.pane{padding:16px 14px}
+.pane.t{padding:0;overflow-x:auto}
+.rows{display:flex;flex-direction:column;gap:9px;--reserve:5rem}
+.row{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:12px;align-items:center}
+@media (max-width:620px){.row{grid-template-columns:1fr;gap:2px}.rows{--reserve:6.6rem}}
+.row-label{font-family:var(--sans);font-size:13px;color:var(--ink-2);line-height:1.3}
+.track{display:flex;align-items:center;gap:9px;min-width:0;flex-wrap:wrap}
+.bar{height:16px;background:var(--m0);border-radius:1px;min-width:2px;flex:0 0 auto;
+  width:calc(var(--w,0) * (100% - var(--reserve)))}
+.bar.b1{background:var(--m1)}
+.val{font-family:var(--sans);font-size:12.5px;color:var(--muted);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.val b{color:var(--ink-2);font-weight:600}
+.pairs{display:flex;flex-direction:column;gap:3px;min-width:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--sans);font-size:12.5px;
   color:var(--ink-2);margin:0 0 14px}
-.mlegend i{display:inline-block;width:11px;height:11px;border-radius:1px;margin-right:6px;vertical-align:-1px}
-
-@media (max-width:620px){
-  .viz-head{flex-direction:column;align-items:stretch;gap:12px}
-  .viz-head>div:first-child{min-width:0}
-  .viz-title{max-width:100%}
-  .seg{align-self:flex-start}
-  .track{flex-wrap:wrap}
-  .rows{--reserve:6.4rem}
-  .bar{max-width:100%}
-  .ctrls{flex-direction:column;align-items:stretch;gap:12px}
-  .ctrl{flex-wrap:wrap}
-  .seg2{flex-wrap:wrap}
-}
-.viz-head>div:first-child{min-width:0}
-.find-h h3{min-width:0;overflow-wrap:break-word}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:1px;margin-right:6px;vertical-align:-1px}
+svg.ch{display:block;width:100%;height:auto;font-family:var(--sans)}
+svg.ch .g{stroke:var(--grid);stroke-width:1}
+svg.ch .vl{fill:var(--ink-2);font-size:10.5px;font-weight:600;text-anchor:middle;
+  paint-order:stroke fill;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+svg.ch .xl{fill:var(--muted);font-size:10.5px;text-anchor:middle}
+svg.ch .yl{fill:var(--muted);font-size:10px;text-anchor:end}
+svg.ch .ax{fill:var(--muted);font-size:10px;text-anchor:start}
+svg.ch .s0{fill:var(--m0)} svg.ch .s1{fill:var(--m1)}
+svg.ch .s2{fill:var(--m2)} svg.ch .s3{fill:var(--m3)}
+.disclaimer{margin:40px 0 0;padding:18px 20px;background:var(--wash);
+  border-left:3px solid var(--teal);border-radius:0 3px 3px 0}
+.disclaimer h2{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--teal-deep);margin:0 0 8px;border:none;padding:0}
+.disclaimer p{font-size:15.5px;color:var(--ink-2);margin:0 0 9px}
+.disclaimer p:last-child{margin:0}
+footer{margin-top:34px;padding-top:22px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:13.5px;color:var(--muted)}
+footer p{margin:0 0 8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to report</a>
 <div class="wrap">
-
+<div class="themebar"><span id="bglabel">Background</span><div class="seg" role="group" aria-labelledby="bglabel"><button type="button" data-th="auto" aria-pressed="true">Auto</button><button type="button" data-th="light" aria-pressed="false">Light</button><button type="button" data-th="dark" aria-pressed="false">Dark</button></div></div>
 <header class="mast">
-  <p class="eyebrow">Te Mātāpuna Library and Learning Services</p>
+  <p class="eyebrow">TE MĀTĀPUNA LIBRARY AND LEARNING SERVICES</p>
   <h1>Te Whatu Aho Rau Source Evaluator</h1>
   <p class="standfirst">How HEAL506 students used the agent, what they said about it, and what we would change</p>
-  <p class="byline">Camilo Amaya Lara, Information Literacy Librarian · Learning and Academic Engagement · Semesters 1 and 2, 2026</p>
+  <p class="byline">Camilo Amaya Lara, Information Literacy Librarian  ·  Learning and Academic Engagement  ·  Semesters 1 and 2, 2026</p>
 </header>
 
-<div class="ctrls">
-  <div class="ctrl"><span>Depth</span>
-    <div class="seg2" role="group" aria-label="Reading depth">
-      <button type="button" data-depth="1" aria-pressed="false">Summary<small>1 min</small></button>
-      <button type="button" data-depth="2" aria-pressed="true">Findings<small>5 min</small></button>
-      <button type="button" data-depth="3" aria-pressed="false">Full report<small>25 min</small></button>
-    </div>
-  </div>
-  <div class="ctrl"><span>Semester</span>
-    <div class="seg2" role="group" aria-label="Semester shown in figures">
-      <button type="button" data-sem="S1" aria-pressed="true">Semester 1</button>
-      <button type="button" data-sem="S2" aria-pressed="false">Semester 2</button>
-    </div>
-  </div>
-</div>
-
-<section class="keys" aria-labelledby="kf">
-  <h2 id="kf">Key findings</h2>
-  <p class="scale"><span><b>883</b> students used the agent</span><span><b>2,630</b> conversations</span><span><b>25,076</b> messages</span><span><b>89</b> survey responses</span><span>Semesters 1 and 2, 2026</span></p>
-  <p class="verdict">Students used the agent to <b>check work they had already written</b>, close to the deadline, often out of hours. Its teaching mode reached far fewer students — and both data sources suggest the reason is <b>where the course placed it</b>, not the agent itself.</p>
-</section>
-
 <div class="shell">
-
 <nav class="toc" aria-label="Contents">
   <h2>Contents</h2>
-  <details open>
-    <summary>Contents</summary>
-    <ol id="nav">
-      <li><a href="#f1">1. Checking, not learning</a></li>
-      <li><a href="#f2">2. Met at the deadline</a></li>
-      <li><a href="#f3">3. Framing changed use</a></li>
-      <li><a href="#f4">4. The wrong tool</a></li>
-      <li><a href="#f5">5. Teaching, not better AI</a></li>
-      <li><a href="#f6">6. Accuracy</a></li>
-      <li><a href="#recs">Recommendations</a></li>
-      <li data-d="3"><a href="#background">Background</a></li>
-      <li data-d="3"><a href="#agent">The Source Evaluator</a></li>
-      <li data-d="3"><a href="#method">Data and analysis</a></li>
-      <li data-d="3"><a href="#s1-usage">Semester 1 usage</a></li>
-      <li data-d="3"><a href="#s1-survey">Semester 1 survey</a></li>
-      <li data-d="3"><a href="#s2-usage">Semester 2 usage</a></li>
-      <li data-d="3"><a href="#s2-compare">Comparison</a></li>
-      <li data-d="3"><a href="#conclusion">Conclusion</a></li>
-    </ol>
-  </details>
+  <details open><summary>Contents</summary><ol><li><a href="#background">Background</a></li><li><a href="#te-whatu-aho-rau-source-evaluator">Te Whatu Aho Rau Source Evaluator</a></li><li><a href="#data-collection-and-analysis">Data collection and analysis</a></li><li><a href="#findings">Findings</a></li><li class="sub"><a href="#semester-1-usage-patterns">Semester 1 usage patterns</a></li><li class="sub"><a href="#semester-1-survey-responses">Semester 1 survey responses</a></li><li class="sub"><a href="#semester-2-usage-patterns">Semester 2 usage patterns</a></li><li class="sub"><a href="#comparison-across-semesters">Comparison across semesters</a></li><li><a href="#conclusions">Conclusions</a></li><li><a href="#recommendations">Recommendations</a></li></ol></details>
 </nav>
 
-<main>
-
-<section class="find" id="f1">
-  <div class="find-h"><span class="find-n">Finding 1 · Usage + survey</span>
-    <h3>Students used the agent to check finished work, not to learn the framework</h3></div>
-  <p data-d="2">Feedback on a completed evaluation table was the most common use of the agent in Semester 1, at 61% of conversations. Step-by-step guidance, the mode built to teach, accounted for 20%. In the survey, three times as many students described the agent reducing the work as described it deepening their thinking.</p>
-  <figure data-d="2" data-swap="modes" data-s1="modes1" data-s2="modes2only">
-    <figcaption><b>Figure A.</b> Conversations by mode of use. Conversations that began with a typed opening were read and counted with the mode they matched.</figcaption>
-  </figure>
-  <blockquote class="fq" data-d="2"><p>Described to me what I could improve on which really gave me insight to what I was missing.</p><cite>Student 43</cite></blockquote>
-</section>
-
-<section class="find" id="f2">
-  <div class="find-h"><span class="find-n">Finding 2 · Usage + survey</span>
-    <h3>The agent was met too late to teach, and students said so</h3></div>
-  <p data-d="2">Half of Semester 1 conversations fell in the three days before submission, and 56% of students met the agent for the first time in that window. Mode choice tracked the deadline: students arriving more than a fortnight early asked to be guided three times more often than those arriving in the final three days.</p>
-  <figure data-d="2" data-swap="timeline" data-s1="tlS1" data-s2="tlS2">
-    <figcaption><b>Figure B.</b> Conversations per week, split by mode of use. The dashed line marks the week the assessment was due. The teal shades are the guided modes; the pale band is feedback on finished work.</figcaption>
-  </figure>
-  <blockquote class="fq" data-d="2"><p>…we already evaluated our source at that point so it felt redundant.</p><cite>Student 57</cite></blockquote>
-</section>
-
-<section class="find" id="f3">
-  <div class="find-h"><span class="find-n">Finding 3 · Usage, both semesters</span>
-    <h3>How the course framed the agent changed how students used it</h3></div>
-  <p data-d="2">The agent did not change between semesters. Almost everything around it did. Step-by-step guidance rose from 20% of conversations to 53%, and from a third of students to nearly two thirds, while students also began earlier. There was no Semester 2 survey, so this rests on behaviour rather than on what students said.</p>
-  <figure data-d="2" data-spec="modes2">
-    <figcaption><b>Figure C.</b> Mode of use as a share of each semester's conversations.</figcaption>
-  </figure>
-</section>
-
-<section class="find" id="f4">
-  <div class="find-h"><span class="find-n">Finding 4 · Usage + survey</span>
-    <h3>Students could not always tell the two AI tools apart</h3></div>
-  <p data-d="2">A hundred and fifty-one Semester 1 conversations opened with the prompt the assessment specifies for AUT Co-pilot, and the agent answered: only four replies in 195 directed the student elsewhere. Seventeen students mentioned Co-pilot in the survey, some asking whether it was the same tool. The confusion vanished in Semester 2.</p>
-  <figure data-d="2" data-swap="outside" data-s1="outside1" data-s2="outside2">
-    <figcaption><b>Figure D.</b> Conversations about something other than source evaluation — 12% of Semester 1 and 9% of Semester 2.</figcaption>
-  </figure>
-</section>
-
-<section class="find" id="f5">
-  <div class="find-h"><span class="find-n">Finding 5 · Survey only</span>
-    <h3>Students asked for teaching, not a better agent</h3></div>
-  <p data-d="2">Of the 65 students who said the agent was not enough on its own, more than three quarters asked for worked examples, group discussion, more class time or a workshop. Almost none asked for improved AI.</p>
-  <figure data-d="2" data-spec="q5" data-survey="1">
-    <figcaption><b>Figure E.</b> Shown only to students who said the agent was not enough on its own, so it is not the whole cohort speaking.</figcaption>
-  </figure>
-  <blockquote class="fq" data-d="2"><p>Group discussion and worked examples to develop individual critical thinking rather than outsourcing to AI.</p><cite>Student 27</cite></blockquote>
-</section>
-
-<section class="find" id="f6">
-  <div class="find-h"><span class="find-n">Finding 6 · Survey only</span>
-    <h3>Accuracy is the most reported weakness</h3></div>
-  <p data-d="2">Eleven students reported wrong, misleading or invented information from a tool whose subject is judging whether information can be trusted. One had to verify its output independently; another found it contradicting their teacher. Nothing in the usage records would have surfaced this.</p>
-  <figure data-d="2" data-spec="q22p" data-survey="1">
-    <figcaption><b>Figure F.</b> Problems students described. Thirty-three of the 67 who answered described at least one.</figcaption>
-  </figure>
-  <blockquote class="fq" data-d="2"><p>I still needed to review the sources myself to ensure accuracy.</p><cite>Student 24</cite></blockquote>
-</section>
-
-<p class="verdict" data-d="2" style="border-top:1px solid var(--rule);padding-top:26px">Five students object to AI in coursework on ethical, environmental or pedagogical grounds, consistently across several questions. A small minority of a self-selected sample, but a considered position.</p>
-
-<div id="fullreport" data-d="3">
-
+<main id="main">
 <h2 id="background">Background</h2>
-<p>The Learning and Academic Engagement (LAE) team in Te Mātāpuna Library and Learning Services supports students' academic and information literacy development. As part of this work, the team partners with academic staff to embed learning support within courses through workshops, online resources, and Cogniti agents, course-specific AI tools designed to support particular learning and assessment tasks.</p>
-<p>HEAL506 Knowledge, Enquiry and Communication is a first-year health paper taken by all health students, with 1,133 enrolled in Semester 1 of 2026. Its main assessment is the Evidence-based Enquiry Report, in which students investigate a health question, locate and evaluate scholarly evidence, and apply that evidence to an Aotearoa New Zealand health context. Section 2 of the report asks students to evaluate one scholarly source using the Te Whatu Aho Rau framework.</p>
-<p>For most students this is their first formal source evaluation, and in a cohort of this size the teaching team cannot work through the framework individually with each of them. In late 2025 the HEAL506 teaching team and the LAE team therefore collaborated to develop the Te Whatu Aho Rau Source Evaluator: an optional tool, embedded in the HEAL506 Canvas site for Semesters 1 and 2 of 2026, that students could use at any point while working on Section 2. The project also forms part of a broader initiative to scaffold source evaluation skills across health programmes.</p>
-
-<h2 id="agent">Te Whatu Aho Rau Source Evaluator</h2>
-<p>Te Whatu Aho Rau Source Evaluator is a Cogniti agent that supports students in evaluating a scholarly source for Section 2 of the HEAL506 Evidence-based Enquiry Report. It guides students through the four elements of the Te Whatu Aho Rau framework:</p>
-<ul>
-  <li><b>Pūtaketanga</b> (origin)</li>
-  <li><b>Aronga</b> (purpose and perspective)</li>
-  <li><b>Tātai Hononga</b> (connections)</li>
-  <li><b>Māramatanga</b> (value)</li>
-</ul>
-<p>The agent does not evaluate a source for students. It is built around evidence-based questioning: it asks students to point to evidence in their chosen article, to say what that evidence shows, and to reach their own judgement about credibility before moving to the next element. Students must support their reasoning from the source itself to progress.</p>
-<p>It can be used at any stage of the task — working through the framework step by step, strengthening a partial evaluation, or reviewing a completed evaluation table. Its guidance is aligned to the assessment because it draws on the HEAL506 assessment instructions and rubric, the Te Whatu Aho Rau Evaluation Framework, and a purpose-built Cogniti system message. Responses are written in plain language and sized for the concise writing the assessment expects.</p>
-
-<h2 id="method">Data collection and analysis</h2>
-<p>The evaluation draws on two sources, which cover different ground. Usage records exist for both semesters but show only what students did. Survey responses exist for Semester 1 only but show what students made of it. Every cross-semester statement in this report therefore rests on usage records alone.</p>
-<figure>
-  <div class="scroll"><table>
-    <thead><tr><th scope="col">Source</th><th scope="col">Semester 1</th><th scope="col">Semester 2</th></tr></thead>
-    <tbody>
-      <tr><td><b>Chatbot usage records</b><br><span class="sub-note">All conversations held with the agent in HEAL506. Records generated for testing were excluded.</span></td>
-          <td>2,291 conversations, 19,518 messages, 751 students<br><span class="sub-note">2 March – 24 April 2026 · 1,133 enrolled</span></td>
-          <td>339 conversations, 5,558 messages, 132 students<br><span class="sub-note">22 July – 30 August 2026 · 442 enrolled</span></td></tr>
-      <tr><td><b>Student survey</b><br><span class="sub-note">Anonymous Qualtrics survey, eight questions.</span></td>
-          <td>89 respondents<br><span class="sub-note">June 2026</span></td>
-          <td>Not conducted</td></tr>
-    </tbody>
-  </table></div>
-  <figcaption><b>Table 1.</b> Combined across both semesters: 2,630 conversations and 25,076 messages from 883 students.</figcaption>
-</figure>
-<p>The survey asked eight questions:</p>
-<ol>
-  <li>Did the chatbot help you learn how to evaluate scholarly sources for your assessment?</li>
-  <li>What did the chatbot do well, and what would you improve or change?</li>
-  <li>Did the four Te Whatu Aho Rau elements encourage you to think more deeply about your source?</li>
-  <li>Was the support from the chatbot enough on its own, or would you have liked other kinds of support as well?</li>
-  <li>What other kinds of support would have helped?</li>
-  <li>Would a chatbot like this be useful in your other health science courses?</li>
-  <li>What kinds of courses or tasks would a tool like this be most useful for?</li>
-  <li>Is there anything else you'd like us to know about using the chatbot?</li>
-</ol>
-<p>The four open-text questions were analysed by inductive coding: responses were read individually, assigned descriptive codes, and grouped into categories. A single response could receive more than one code, so category totals may exceed the number of respondents. Usage records were analysed at conversation level, with timestamps converted from UTC to New Zealand time and each conversation categorised by its starting mode.</p>
-<p>Survey percentages are a proportion of those answering that question; usage percentages are a proportion of conversations in that semester. Every figure can be read as a chart or a table — use the control at the top right of each to switch.</p>
-
+<p>The Learning and Academic Engagement (LAE) team in Te Mātāpuna Library and Learning Services supports students' academic and information literacy development. As part of this work, the team partners with academic staff to embed learning support within courses through workshops and online resources such as Cogniti agents, course-specific AI chatbots designed to support particular learning and assessment tasks.</p>
+<p>HEAL506 Knowledge, Enquiry and Communication is a first-year health paper in which students complete an Evidence-based Enquiry Report. The assessment requires students to engage with health information, locate and evaluate scholarly evidence, and apply that evidence to an Aotearoa New Zealand health context. Source evaluation is a key component of the report, requiring students to assess the credibility and relevance of a scholarly source using the Te Whatu Aho Rau framework.</p>
+<p>In late 2025, the HEAL506 teaching team and the LAE team collaborated to develop the Te Whatu Aho Rau Source Evaluator. The agent was embedded within the HEAL506 Canvas site during Semesters 1 and 2 of 2026 as an optional online resource to support this component of the assessment. The project also forms part of a broader initiative aimed to explore the efficient use of Cogniti agents to scaffold source evaluation skills across health programmes.</p>
+<h2 id="te-whatu-aho-rau-source-evaluator">Te Whatu Aho Rau Source Evaluator</h2>
+<p>The Source Evaluator is a Cogniti agent that supports students in evaluating a scholarly source for Section 2 of the Evidence-based Enquiry Report. It guides students through the four elements of the Te Whatu Aho Rau framework:</p>
+<ul><li>Pūtaketanga (origin)</li><li>Aronga (purpose and perspective)</li><li>Tātai Hononga (connections)</li><li>Māramatanga (value)</li></ul>
+<p>The agent draws on the HEAL506 written assessment instructions and rubric, the Te Whatu Aho Rau Evaluation Framework, and a purpose-built Cogniti system message developed for the task to provide assessment-aligned guidance.</p>
+<p>Students can use the agent at different stages of the evaluation process: to work through the framework step by step, strengthen a partially completed evaluation, or receive feedback on a completed evaluation table that students are required to submit as part of the assessment.</p>
+<p>The agent is designed around a guided, question-based approach. Rather than evaluating a source for students, it prompts them to identify evidence from their chosen article or source, reflect on its relevance to an Aotearoa New Zealand health context, and make their own credibility judgements. Students are asked to support their reasoning with evidence from the source itself before moving through the evaluation process. Responses are written in plain language and structured to support concise evaluation writing appropriate for the assessment.</p>
+<h2 id="data-collection-and-analysis">Data collection and analysis</h2>
+<p>This evaluation draws on two sources of data:</p>
+<ul class="src"><li><b>Chatbot usage records:</b> All conversations held with the agent in HEAL506 across both semesters: 2,630 conversations and 25,076 messages from 883 students.</li></ul>
+<figure class="fig"><div class="scroll"><table><thead><tr><th scope="col">Source</th><th scope="col" class="r">Semester 1</th><th scope="col" class="r">Semester 2</th></tr></thead><tbody><tr><td class="">Chatbot usage records</td><td class=" r">2,291 conversations<br>19,518 messages<br>751 students</td><td class=" r">339 conversations<br>5,558 messages<br>132 students</td></tr><tr><td class="">Dates covered</td><td class=" r">2 March – 24 April 2026</td><td class=" r">22 July – 30 August 2026</td></tr><tr><td class="">Students enrolled</td><td class=" r">1,133</td><td class=" r">442</td></tr><tr><td class="">Student survey</td><td class=" r">89 respondents, June 2026</td><td class=" r">Not conducted</td></tr></tbody></table></div><figcaption><b>Table 1.</b> Combined across both semesters: 2,630 conversations and 25,076 messages from 883 students. Records generated for testing were excluded.</figcaption></figure>
+<ul class="src"><li><b>Student Survey:</b> An anonymous Qualtrics survey of Semester 1 students, conducted in June 2026 (n = 89). Students were asked eight questions:</li></ul>
+<ol class="qs"><li>Did the chatbot help you learn how to evaluate scholarly sources for your assessment?</li><li>What did the chatbot do well, and what would you improve or change?</li><li>Did the four Te Whatu Aho Rau elements encourage you to think more deeply about your source?</li><li>Was the support from the chatbot enough on its own, or would you have liked other kinds of support as well?</li><li>What other kinds of support would have helped?</li><li>Would a chatbot like this be useful in your other health science courses?</li><li>What kinds of courses or tasks would a tool like this be most useful for?</li><li>Is there anything else you'd like us to know about using the chatbot?</li></ol>
+<p>The four open-text survey questions were analysed using inductive coding. Responses were read individually, assigned descriptive codes, and grouped into broader categories. Because a single response could receive multiple codes, category totals may exceed the number of respondents.</p>
+<p>Usage records were analysed at the conversation level. Timestamps were converted from UTC to New Zealand time, and conversations were categorised according to their starting mode.</p>
+<p>No survey was conducted in Semester 2. Consequently, findings about students' perceptions of the agent are drawn from the Semester 1 survey only, while comparisons between semesters rely solely on chatbot usage-record data.</p>
+<p>Survey percentages are reported as a proportion of respondents to a given question. Usage percentages are reported as a proportion of conversations within the relevant semester.</p>
 <h2 id="findings">Findings</h2>
-<p>The findings draw on two sources of data: usage records from the agent and survey responses from Semester 1 students. They are presented in three parts: Semester 1 usage patterns, Semester 1 survey responses, and a comparison of usage patterns across Semesters 1 and 2.</p>
-
-<h3 id="s1-usage">Semester 1 usage patterns</h3>
-<p class="tag">Usage records · 2 March to 24 April 2026</p>
+<p>The findings draw on two sources: usage records from the agent and survey responses from Semester 1 students. They are presented in four parts: Semester 1 usage patterns, Semester 1 survey responses, Semester 2 usage patterns, and a comparison across the two semesters.</p>
+<h3 id="semester-1-usage-patterns">Semester 1 usage patterns</h3>
+<p class="tag">USAGE RECORDS · 2 MARCH TO 24 APRIL 2026</p>
 <p>The Semester 1 dataset comprised 2,291 conversations and 19,518 messages from 751 of the 1,133 enrolled students. The assessment was due on Thursday 2 April 2026.</p>
-<p>Two thirds of the cohort used the agent at least once. Most engaged only briefly: 36% had a single conversation, half had two conversations or fewer, and 77% used the agent during a single week only.</p>
-
+<p>A total of 751 students (66% of the cohort) used the agent at least once, indicating substantial uptake for an optional support tool. Most students engaged briefly: 36% had a single conversation, 50% had two conversations or fewer, and 77% used the agent during a single week only.</p>
 <h4>Use across the semester</h4>
-<p>Use was concentrated immediately before the due date. More than half of all conversations — 1,280 of 2,291 — took place in the week beginning 30 March, and 517 students used the agent in that week alone. Half of all conversations took place in the final three days before submission, and 56% of students used the agent for the first time in those three days.</p>
-<figure data-spec="weekly1">
-  <figcaption><b>Table 2 / Figure 1.</b> Conversations per week, Semester 1. The students column counts those active that week; a student active in more than one week is counted in each, so it adds to more than 751.</figcaption>
-</figure>
-<p>Before the due date, use was steady but modest. Activity fell sharply immediately afterwards, with only 21 conversations recorded across the remaining seven weeks.</p>
-
+<p>Use was concentrated immediately before the due date. A total of 1,280 conversations (56% of the semester total) took place in the week beginning 30 March, and 517 students used the agent in that week alone. Half of all conversations took place in the final three days before submission, and 56% of students used the agent for the first time in those three days.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;stack&quot;, &quot;cats&quot;: [&quot;2 Mar&quot;, &quot;9 Mar&quot;, &quot;16 Mar&quot;, &quot;23 Mar&quot;, &quot;30 Mar&quot;, &quot;6 Apr&quot;, &quot;13 Apr&quot;, &quot;20 Apr&quot;, &quot;27 Apr+&quot;], &quot;series&quot;: [&quot;Guide me step by step&quot;, &quot;Help me improve what I started&quot;, &quot;Give me feedback on my table&quot;, &quot;Outside the design&quot;], &quot;vals&quot;: [[37, 64, 43, 120, 187, 3, 0, 0, 1], [3, 8, 8, 37, 84, 6, 0, 0, 1], [19, 54, 96, 329, 888, 17, 1, 1, 0], [3, 25, 41, 68, 121, 9, 0, 12, 5]], &quot;due&quot;: 4, &quot;dueLabel&quot;: &quot;due&quot;}" data-title="Use across the semester" data-sub="Semester 1 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Week beginning</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">% of total</th><th scope="col" class="r">Messages</th><th scope="col" class="r">Students</th></tr></thead><tbody><tr><td class="">2 Mar</td><td class=" r">62</td><td class=" r">2.7%</td><td class=" r">828</td><td class=" r">38</td></tr><tr><td class="">9 Mar</td><td class=" r">151</td><td class=" r">6.6%</td><td class=" r">1,362</td><td class=" r">68</td></tr><tr><td class="">16 Mar</td><td class=" r">188</td><td class=" r">8.2%</td><td class=" r">1,472</td><td class=" r">89</td></tr><tr><td class="">23 Mar</td><td class=" r">554</td><td class=" r">24.2%</td><td class=" r">5,046</td><td class=" r">228</td></tr><tr><td class="">30 Mar</td><td class=" r">1,280</td><td class=" r">55.9%</td><td class=" r">10,352</td><td class=" r">517</td></tr><tr><td class="">6 Apr</td><td class=" r">35</td><td class=" r">1.5%</td><td class=" r">274</td><td class=" r">15</td></tr><tr><td class="">13 Apr</td><td class=" r">1</td><td class=" r">0.0%</td><td class=" r">6</td><td class=" r">1</td></tr><tr><td class="">20 Apr</td><td class=" r">13</td><td class=" r">0.6%</td><td class=" r">152</td><td class=" r">5</td></tr><tr><td class="">27 Apr – 18 May</td><td class=" r">7</td><td class=" r">0.3%</td><td class=" r">26</td><td class=" r">5</td></tr></tbody></table></div><figcaption><b>Figure 1 / Table 2.</b> Conversations per week, split by mode of use. The assessment was due in the week beginning 30 March. Each row counts the students active that week; a student active in more than one week is counted in each, so the column adds to more than 751.</figcaption></figure>
+<p>Use increased progressively as the assessment deadline approached, with activity peaking in the week of submission. Following the due date, use declined substantially, suggesting that students engaged with the agent primarily as an assessment support tool rather than as a general learning resource.</p>
 <h4>When students used it</h4>
-<p>Just over half of all conversations took place outside standard working hours. More students used the agent on a Saturday than on a Friday, and 198 conversations began between midnight and 6am.</p>
-<figure data-spec="timing1">
-  <figcaption><b>Table 3 / Figure 2.</b> The categories overlap: weekend, peak and early-morning conversations are also counted in the first two rows. Only the first two rows total 100%.</figcaption>
-</figure>
-<p>The student-level picture is clearer still. A total of 258 students — 34% of users — never accessed the agent during weekday working hours. For these students, the agent provided support that would not otherwise have been available through conventional staffed services.</p>
-
+<p>A total of 1,170 conversations (51%) took place outside standard working hours. More students used the agent on a Saturday than on a Friday, and 198 conversations began between midnight and 6am.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Within work hours (Mon\u2013Sun 8am\u20134pm)&quot;, &quot;After hours (outside Mon\u2013Sun 8am\u20134pm)&quot;, &quot;Weekend (Saturday or Sunday)&quot;, &quot;Peak time (started 2\u20133pm NZT)&quot;, &quot;Started early morning (12am\u20136am NZT)&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[1121.0, 1170.0, 379.0, 209.0, 198.0]]}" data-title="When students used it" data-sub="Semester 1 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Timing pattern</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">% of total</th></tr></thead><tbody><tr><td class="">Within work hours (Mon–Sun 8am–4pm)</td><td class=" r">1,121 of 2,291</td><td class=" r">48.9%</td></tr><tr><td class="">After hours (outside Mon–Sun 8am–4pm)</td><td class=" r">1,170 of 2,291</td><td class=" r">51.1%</td></tr><tr><td class="">Weekend (Saturday or Sunday)</td><td class=" r">379 of 2,291</td><td class=" r">16.5%</td></tr><tr><td class="">Peak time (started 2–3pm NZT)</td><td class=" r">209 of 2,291</td><td class=" r">9.1%</td></tr><tr><td class="">Started early morning (12am–6am NZT)</td><td class=" r">198 of 2,291</td><td class=" r">8.6%</td></tr></tbody></table></div><figcaption><b>Table 3.</b> The categories overlap: weekend, peak and early-morning conversations are also counted in the first two rows. Only the first two rows total 100%.</figcaption></figure>
+<p>The student-level picture is clearer still. A total of 258 students (34% of users) never accessed the agent during weekday working hours. For these students, the agent provided support that would not otherwise have been available through conventional staffed services.</p>
 <h4>How long conversations ran</h4>
-<p>Most conversations were short. The most common length was four to six messages, which is two or three exchanges, and a quarter ended after a single question and answer.</p>
-<figure data-spec="length1">
-  <figcaption><b>Table 4 / Figure 3.</b> Each exchange is two messages — one from the student, one from the agent. The median conversation ran four messages.</figcaption>
-</figure>
-<p>Short conversations were not necessarily unsuccessful. Conversation length varied according to how students used the agent: students seeking feedback on a completed table typically needed only a few exchanges, whereas students working through the framework step by step remained engaged for substantially longer.</p>
-
+<p>Most conversations were short. The most common length was four to six messages, which is two or three exchanges, and 556 conversations (24%) ended after a single question and answer.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;column&quot;, &quot;cats&quot;: [&quot;2&quot;, &quot;4\u20136&quot;, &quot;8\u201314&quot;, &quot;16\u201330&quot;, &quot;32+&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[556, 945, 454, 228, 108]]}" data-title="How long conversations ran" data-sub="Semester 1 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Length of conversation</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">% of total</th></tr></thead><tbody><tr><td class="">2 messages — one question, one answer</td><td class=" r">556</td><td class=" r">24%</td></tr><tr><td class="">4 to 6 messages</td><td class=" r">945</td><td class=" r">41%</td></tr><tr><td class="">8 to 14 messages</td><td class=" r">454</td><td class=" r">20%</td></tr><tr><td class="">16 to 30 messages</td><td class=" r">228</td><td class=" r">10%</td></tr><tr><td class="">32 messages or more</td><td class=" r">108</td><td class=" r">5%</td></tr></tbody></table></div><figcaption><b>Figure 2 / Table 4.</b> Conversation length in messages, Semester 1. Each exchange is two messages — one from the student, one from the agent. The median conversation ran four messages.</figcaption></figure>
+<p>Conversation length varied according to how students used the agent: students seeking feedback on a completed table typically needed only a few exchanges, whereas students working through the framework step by step remained engaged for substantially longer.</p>
 <h4>How students used the agent</h4>
 <p>Feedback on a completed evaluation table was by far the most common use, accounting for 61% of all conversations. Step-by-step guidance represented 20% of conversations, while requests to improve a partially completed evaluation accounted for a further 6%.</p>
-<figure data-spec="modes1">
-  <figcaption><b>Table 5 / Figure 4.</b> A quarter of students typed their own opening question rather than selecting a mode; those conversations were read and counted with the mode they matched. The students column counts how many of the 751 used the agent that way at least once, so a student can appear in more than one row.</figcaption>
-</figure>
-<p>The picture is somewhat less pronounced at the student level. A third of students used the step-by-step mode at least once, suggesting that while feedback dominated overall usage, many students also engaged with the agent as a learning support tool.</p>
-<p>These modes represent different forms of support. Feedback on a completed table functions primarily as a review service, whereas step-by-step guidance is intended to teach students how to apply the framework. Only around half of the step-by-step conversations progressed through all four elements before ending.</p>
-
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Outside the design&quot;, &quot;Help me improve what I started&quot;, &quot;Guide me step by step&quot;, &quot;Give me feedback on my table&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[284, 147, 455, 1405]]}" data-title="How students used the agent" data-sub="Semester 1 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Mode of use</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">Share</th><th scope="col" class="r">Students</th><th scope="col" class="r">Median length</th></tr></thead><tbody><tr><td class="">Give me feedback on my table</td><td class=" r">1,405</td><td class=" r">61%</td><td class=" r">665</td><td class=" r">4</td></tr><tr><td class="">Guide me step by step</td><td class=" r">455</td><td class=" r">20%</td><td class=" r">259</td><td class=" r">10</td></tr><tr><td class="">Help me improve what I started</td><td class=" r">147</td><td class=" r">6%</td><td class=" r">94</td><td class=" r">10</td></tr><tr><td class="">Outside the design</td><td class=" r">284</td><td class=" r">12%</td><td class=" r">153</td><td class=" r">2</td></tr></tbody></table></div><figcaption><b>Figure 3 / Table 5.</b> Semester 1 conversations by mode of use, out of 2,291. Twenty-five percent of students typed their own opening question rather than selecting a mode; those conversations were read and counted with the mode they matched. The students column counts how many of the 751 used the agent that way at least once, so a student can appear in more than one row.</figcaption></figure>
+<p>Although feedback on completed work was the most common use, many students also engaged with the agent as a learning tool. A total of 259 students (34% of users) accessed the step-by-step guidance mode at least once, indicating that students used the agent for both formative learning and feedback purposes.</p>
+<p>These modes represent different forms of support. Feedback on a completed table functions primarily as a review service, whereas step-by-step guidance is intended to guide students step by step on how to apply the framework. Fifty-one percent of step-by-step conversations progressed through all four framework elements before ending, while others concluded earlier in the process. The usage records do not indicate why students chose to stop at particular points.</p>
 <h4>Use outside the agent's intended purpose</h4>
-<p>Not all conversations aligned with the agent's intended purpose. A total of 284 conversations — 12% of the semester total — focused on tasks other than source evaluation.</p>
-<figure data-spec="outside1">
-  <figcaption><b>Table 6 / Figure 5.</b> Grouped by reading the conversations, so the boundaries between groups are approximate.</figcaption>
-</figure>
-<p>More than half of the conversations outside the agent's intended scope related to Section 3 of the assessment. Students were asked to use AUT Co-pilot to generate an AI summary of their article, and many instead pasted the prescribed prompt into the Source Evaluator. In total, 195 conversations from 119 students included this prompt at some point in the interaction, and 17 students mentioned Co-pilot by name.</p>
-<p>This highlights a boundary problem. The agent was designed to support source evaluation, but students did not always distinguish it from other AI tools used in the course. Of the 195 replies to that prompt, only four directed the student elsewhere: nothing in the agent's design instructs it to decline work outside its scope.</p>
-<p>Concerns that students might use the agent to avoid completing the work themselves were not supported by the usage data. Only five of the 2,291 conversations contained any attempt to have the agent complete assessment writing on the student's behalf. One student stated explicitly: <i>“I want advice not you to write it for me.”</i> Within this dataset, students overwhelmingly used the agent as a source of guidance rather than a means of circumventing assessment requirements.</p>
-
-<h3 id="s1-survey">Semester 1 survey responses</h3>
-<p class="tag">Survey · June 2026</p>
+<p>Not all conversations aligned with the agent's intended purpose. A total of 284 conversations (12% of the semester total) focused on tasks other than source evaluation.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;The Assessment Section 3 - AUT Copilot prompt&quot;, &quot;Referencing and APA&quot;, &quot;Another section of the report&quot;, &quot;Help with writing or editing&quot;, &quot;Due dates, rubric and marks&quot;, &quot;Finding sources&quot;, &quot;Something else or unclear&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[151.0, 36.0, 34.0, 16.0, 11.0, 3.0, 33.0]]}" data-title="Use outside the agent&#x27;s intended purpose" data-sub="Semester 1 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">What it was about</th><th scope="col" class="r">Conversations</th></tr></thead><tbody><tr><td class="">The Assessment Section 3 - AUT Copilot prompt</td><td class=" r">151</td></tr><tr><td class="">Referencing and APA</td><td class=" r">36</td></tr><tr><td class="">Another section of the report</td><td class=" r">34</td></tr><tr><td class="">Help with writing or editing</td><td class=" r">16</td></tr><tr><td class="">Due dates, rubric and marks</td><td class=" r">11</td></tr><tr><td class="">Finding sources</td><td class=" r">3</td></tr><tr><td class="">Something else or unclear</td><td class=" r">33</td></tr></tbody></table></div><figcaption><b>Table 6.</b> Grouped by reading the conversations, so the boundaries between groups are approximate.</figcaption></figure>
+<p>A total of 151 conversations (53% of the 284 conversations outside the agent’s intended scope) related to Section 3 of the assessment. Students were asked to use AUT Copilot to generate an AI summary of their article, and many instead pasted the prescribed prompt into the Te Whato Aho Rau Source Evaluator agent. In total, 195 conversations from 119 students included this prompt at some point in the interaction, and 17 students mentioned Copilot by name.</p>
+<p>This highlights the importance of clearly communicating the different purposes of AI tools used within the course. The agent was designed to support source evaluation, but students did not always distinguish it from other AI tools used in the course. Of the 195 replies to that prompt, only four directed the student elsewhere: nothing in the agent's design instructs it to decline work outside its scope.</p>
+<p>Only five of the 2,291 conversations contained any attempt to have the agent complete assessment writing on the student's behalf. Within this dataset, students overwhelmingly used the agent as a source of guidance rather than a means of circumventing assessment requirements.</p>
+<blockquote><p>“I want advice not you to write it for me.”</p><cite>Student, Semester 1 conversation log</cite></blockquote>
+<h3 id="semester-1-survey-responses">Semester 1 survey responses</h3>
+<p class="tag">SURVEY · JUNE 2026 · 89 RESPONDENTS</p>
 <p>Eighty-nine students responded, from a cohort of 1,133. The usage records show what students did; the survey asked the same cohort what they made of it.</p>
-
 <h4>Did the agent help them learn?</h4>
-<p class="qmeta">Question 1 · 85 of 89 answered.</p>
-<p>Three quarters said yes, but the distribution matters more than the headline: “yes, a little” was chosen more than twice as often as “yes, a lot.” One in five said it did not really help, or did not help at all.</p>
-<figure data-spec="q1">
-  <figcaption><b>Table 7 / Figure 6.</b> Students, out of the 85 who answered. Four skipped this question.</figcaption>
-</figure>
-
+<p>A total of 65 respondents (77% of those who answered the question) reported that the agent helped them learn source evaluation, with 77% selecting either "yes, a little" or "yes, a lot". The most common response was "yes, a little" (52%), while a further 25% reported that it helped "a lot". A total of 17 respondents (20%) said the agent did not help or did not help much.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;I&#x27;m not sure&quot;, &quot;No, not at all&quot;, &quot;Not really&quot;, &quot;Yes, a lot&quot;, &quot;Yes, a little&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[3, 5, 12, 21, 44]]}" data-title="Did the agent help them learn?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Answer</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 85</th></tr></thead><tbody><tr><td class="">Yes, a little</td><td class=" r">44</td><td class=" r">52%</td></tr><tr><td class="">Yes, a lot</td><td class=" r">21</td><td class=" r">25%</td></tr><tr><td class="">Not really</td><td class=" r">12</td><td class=" r">14%</td></tr><tr><td class="">No, not at all</td><td class=" r">5</td><td class=" r">6%</td></tr><tr><td class="">I'm not sure</td><td class=" r">3</td><td class=" r">4%</td></tr></tbody></table></div><figcaption><b>Figure 4 / Table 7.</b> Did the chatbot help you learn how to evaluate scholarly sources? Question 1. Four students skipped this question.</figcaption></figure>
 <h4>What did it do well?</h4>
-<p class="qmeta">Question 2, first part · 73 of 89 answered.</p>
-<p>Students most often described the agent as something that responded to work they had already done, or that made an unfamiliar task easier to understand. Thirteen described it giving them feedback, ten described it making things clearer, and eight described it explaining what source evaluation involves.</p>
-<p>Sixteen students described something different: the agent doing the evaluative work itself, giving them answers to use, or finding sources for them. Finding sources is not a function the agent provides. By contrast, five students described it prompting them to think more deeply, working with the Te Whatu Aho Rau elements, or teaching them something they could reuse independently.</p>
-<p>That ratio echoes the usage records. Three times as many students described the agent reducing the work as described it deepening their thinking.</p>
-<figure data-spec="q2well">
-  <figcaption><b>Table 8 / Figure 7.</b> Students could describe more than one thing, so the column does not total 73. The table view shows the sub-categories within each group.</figcaption>
-</figure>
-<blockquote><p>The chatbot made the process clearer and easier to follow by breaking down key criteria like credibility, relevance, and reliability. It gave practical tips and examples that helped me feel more confident in identifying high-quality scholarly sources.</p><cite>Student 70</cite></blockquote>
-<blockquote><p>Described to me what I could improve on which really gave me insight to what I was missing.</p><cite>Student 43</cite></blockquote>
-<blockquote><p>It helped me understand what I needed to work on through questions that made me think deeper about my sources.</p><cite>Student 64</cite></blockquote>
-<blockquote><p>Help me find the main source of my topic.</p><cite>Student 18</cite></blockquote>
-
+<p>Students most often described the agent as something that responded to work they had already done, or that made an unfamiliar task easier to understand. Thirteen described it giving them feedback, ten described it making things clearer, and eight described it explaining what source evaluation involves. Seventy-three of the 89 respondents answered this question.</p>
+<p>Some students valued the agent for providing direct guidance, suggestions, or information they could use in their work. Several responses also suggested that students interpreted the agent's purpose more broadly than intended, including expectations that it could help find sources. Finding sources is not a function the agent provides. By contrast, five students described it prompting them to think more deeply, working with the Te Whatu Aho Rau elements, or teaching them something they could reuse independently.</p>
+<p>This pattern broadly aligns with the usage records. Students most often described the agent as providing practical support, feedback, clarification, or task guidance, while fewer explicitly referred to deeper learning or transferable evaluation skills.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Taught me strategies I could use again&quot;, &quot;Helped me with the Te Whatu Aho Rau elements&quot;, &quot;Made the task feel less overwhelming&quot;, &quot;Nothing \u2014 I didn&#x27;t use it&quot;, &quot;Made me think more deeply&quot;, &quot;Made me think about the agent itself&quot;, &quot;Connected it to the assignment&quot;, &quot;Did the evaluating for me&quot;, &quot;Broke the task into steps&quot;, &quot;Gave me answers or information to use&quot;, &quot;Helped me find sources&quot;, &quot;Was quick and easy to use&quot;, &quot;Explained what source evaluation involves&quot;, &quot;Made evaluation easier to understand&quot;, &quot;Gave feedback on my work&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[1, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 8, 8, 10, 13]]}" data-title="What did it do well?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Category / sub-category</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 73</th></tr></thead><tbody><tr><td class="">Gave feedback on my work</td><td class=" r">13</td><td class=" r">18%</td></tr><tr><td class="ind">Showed me what to improve</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="ind">Gave feedback (general)</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Gave practical tips and examples</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Seven further kinds of feedback, one student each</td><td class=" r">7</td><td class=" r">10%</td></tr><tr><td class="">Made evaluation easier to understand</td><td class=" r">10</td><td class=" r">14%</td></tr><tr><td class="ind">Made things clearer</td><td class=" r">6</td><td class=" r">8%</td></tr><tr><td class="ind">Explained it in different words</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Clarified meanings and context</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Two further kinds of explaining, one student each</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Explained what source evaluation involves</td><td class=" r">8</td><td class=" r">11%</td></tr><tr><td class="ind">Explained source evaluation clearly</td><td class=" r">4</td><td class=" r">5%</td></tr><tr><td class="ind">Clarified what makes a source credible</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Two further kinds of explaining, one student each</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Was quick and easy to use</td><td class=" r">8</td><td class=" r">11%</td></tr><tr><td class="ind">Summarised things</td><td class=" r">4</td><td class=" r">5%</td></tr><tr><td class="ind">Was easy to use</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Worked quickly</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="ind">Available outside campus hours</td><td class=" r">1</td><td class=" r">1%</td></tr><tr><td class="">Helped me find sources</td><td class=" r">6</td><td class=" r">8%</td></tr><tr><td class="">Gave me answers or information to use</td><td class=" r">6</td><td class=" r">8%</td></tr><tr><td class="">Broke the task into steps</td><td class=" r">5</td><td class=" r">7%</td></tr><tr><td class="">Did the evaluating for me</td><td class=" r">5</td><td class=" r">7%</td></tr><tr><td class="">Connected it to the assignment</td><td class=" r">5</td><td class=" r">7%</td></tr><tr><td class="">Made me think about the agent itself</td><td class=" r">4</td><td class=" r">5%</td></tr><tr><td class="">Made me think more deeply</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="">Nothing — I didn't use it</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="">Made the task feel less overwhelming</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Helped me with the Te Whatu Aho Rau elements</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Taught me strategies I could use again</td><td class=" r">1</td><td class=" r">1%</td></tr></tbody></table></div><figcaption><b>Figure 5 / Table 8.</b> What students said the agent did well, at category level. Question 2, first part. Students could describe more than one thing, so the indented rows can add to more than the bold row above them and the column does not total 73.</figcaption></figure>
+<blockquote><p>“The chatbot made the process clearer and easier to follow by breaking down key criteria like credibility, relevance, and reliability.”</p><cite>Student 70</cite></blockquote>
+<blockquote><p>“It helped me understand what I needed to work on through questions that made me think deeper about my sources.”</p><cite>Student 64</cite></blockquote>
 <h4>What would they change?</h4>
-<p class="qmeta">Question 2, second part · 67 of 89 answered.</p>
-<p>Accuracy was the single most common issue by a wide margin. Eleven students said the agent gave wrong, misleading or invented information — a serious finding for a tool whose purpose is teaching students to judge whether information can be trusted.</p>
-<p>Four students could not find the agent on Canvas, three found it repetitive, three found its feedback too general, and three found the layout hard to work with. Twelve students said there was nothing to improve; two gave reasoned endorsements, but most were one-word answers that may reflect disengagement rather than satisfaction.</p>
-<figure data-spec="q22p">
-  <figcaption><b>Table 9 / Figure 8.</b> Problems students described. Thirty-three described at least one.</figcaption>
-</figure>
-<figure data-spec="q22q">
-  <figcaption><b>Table 10 / Figure 9.</b> Changes students asked for. Thirty-four asked for a change or said nothing needed changing.</figcaption>
-</figure>
-<blockquote><p>Less making stuff up.</p><cite>Student 50</cite></blockquote>
-<blockquote><p>Gave me some suggestions that didn't make sense or were the opposite to the teacher.</p><cite>Student 74</cite></blockquote>
-<blockquote><p>I still needed to review the sources myself to ensure accuracy.</p><cite>Student 24</cite></blockquote>
-<blockquote><p>It could be improved by creating a system where it doesn't give answers but also ask open questions to stimulate further thinking.</p><cite>Student 34</cite></blockquote>
-<blockquote><p>I would include real-world examples so I can see how to apply the criteria in practice — for example, comparing a peer-reviewed journal article with a less reliable website and explaining why one is more credible.</p><cite>Student 70</cite></blockquote>
-
-<div class="note">
-  <h4>The role of prior teaching</h4>
-  <p>Asked what they would change, Student 72 answered: “Nothing, it was of assistance, but only because our lecturers and tutors had given us well rounded explanations of the evaluation framework, providing questions (particularly our tutor) to provoke our thinking as we learned.”</p>
-  <p>This is a single response, but it is the clearest statement in the survey of something the numbers only imply: the agent worked for this student because the teaching came first, not instead of it.</p>
-</div>
-
+<p>Accuracy was the most commonly reported concern. Eleven students said the agent gave wrong, misleading or invented information. While this represents a minority of respondents, it highlights the importance of helping students critically evaluate AI-generated responses rather than accepting them at face value. Sixty-seven of the 89 respondents answered this question.</p>
+<p>Four students could not find the agent on Canvas, three found it repetitive, three found its feedback too general, and three found the layout hard to work with. Twelve students said there was nothing they would change. Some responses were brief, making it difficult to determine whether they reflected satisfaction, limited engagement with the question, or other reasons for not suggesting improvements.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Seven further problems, one each&quot;, &quot;No clear stopping point&quot;, &quot;Only answered, didn&#x27;t ask questions&quot;, &quot;Layout hard to use&quot;, &quot;Feedback too general&quot;, &quot;Repeated itself&quot;, &quot;Hard to find on Canvas&quot;, &quot;Gave wrong or made-up information&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[7, 2, 2, 3, 3, 3, 4, 11]]}" data-title="What would they change?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Problem described</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 67</th></tr></thead><tbody><tr><td class="">Gave wrong or made-up information</td><td class=" r">11</td><td class=" r">16%</td></tr><tr><td class="">Hard to find on Canvas</td><td class=" r">4</td><td class=" r">6%</td></tr><tr><td class="">Repeated itself</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="">Feedback too general</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="">Layout hard to use</td><td class=" r">3</td><td class=" r">4%</td></tr><tr><td class="">Only answered, didn't ask questions</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">No clear stopping point</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Seven further problems, one student each</td><td class=" r">7</td><td class=" r">10%</td></tr></tbody></table></div><figcaption><b>Figure 6 / Table 9.</b> Problems students described. Question 2, second part. Thirty-three students described at least one problem.</figcaption></figure>
+<blockquote><p>“Gave me some suggestions that didn't make sense or were the opposite to the teacher.”</p><cite>Student 74</cite></blockquote>
+<blockquote><p>“I still needed to review the sources myself to ensure accuracy.”</p><cite>Student 24</cite></blockquote>
+<h4>The role of prior teaching</h4>
+<p>Asked what they would change, Student 72 answered: “Nothing, it was of assistance, but only because our lecturers and tutors had given us well rounded explanations of the evaluation framework, providing questions (particularly our tutor) to provoke our thinking as we learned.”</p>
+<p>Although this is a single response, it highlights a theme that appears elsewhere in the survey: students often saw the agent as most useful when combined with teaching, discussion, and tutor support rather than as a replacement for them.</p>
 <h4>Did the four elements prompt deeper thinking?</h4>
-<p class="qmeta">Question 3 · 85 of 89 answered.</p>
-<p>This is the strongest positive result in the survey. More than four in five students said the Te Whatu Aho Rau elements made them think more deeply about their source than they usually would, and 42% chose the strongest option: it made them consider things they would not have thought of before.</p>
-<figure data-spec="q3">
-  <figcaption><b>Table 11 / Figure 10.</b> Students, out of the 85 who answered. Four skipped this question.</figcaption>
-</figure>
-<div class="note">
-  <h4>Reconciling the prompted and unprompted responses</h4>
-  <p>When asked directly, 82% said the four elements prompted deeper thinking. When asked openly what the agent did well, only five students mentioned deeper thinking, the framework, or learning something they could reuse.</p>
-  <p>The likely explanation is that the two questions measure different things. Question 3 names the framework and asks students to agree or disagree; Question 2 asks what comes to mind first. Both results are real: the framework did prompt deeper thinking when students were pointed at it, and it was not what most students reached for when describing the experience unprompted.</p>
-  <p>The practical reading is that the framework works but does not announce itself. Students may need it named in class to notice they are using it.</p>
-</div>
-
+<p>This is the strongest positive result in the survey. A total of 70 students (82% of those who answered the question) said the Te Whatu Aho Rau elements prompted deeper thinking about their source than they usually would, and 42% chose the strongest option: it made them consider things they would not have thought of before.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;I&#x27;m not sure&quot;, &quot;Haven&#x27;t evaluated sources before&quot;, &quot;Not really, approached it as usual&quot;, &quot;A little, prompted some deeper thinking&quot;, &quot;Yes, considered things I wouldn&#x27;t have&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[1, 1, 13, 34, 36]]}" data-title="Did the four elements prompt deeper thinking?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Answer</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 85</th></tr></thead><tbody><tr><td class="">Yes, it made me consider things I wouldn't have thought of</td><td class=" r">36</td><td class=" r">42%</td></tr><tr><td class="">A little, it prompted some deeper thinking</td><td class=" r">34</td><td class=" r">40%</td></tr><tr><td class="">Not really, I approached it the same way I usually would</td><td class=" r">13</td><td class=" r">15%</td></tr><tr><td class="">I haven't evaluated sources before, so I can't compare</td><td class=" r">1</td><td class=" r">1%</td></tr><tr><td class="">I'm not sure</td><td class=" r">1</td><td class=" r">1%</td></tr></tbody></table></div><figcaption><b>Figure 7 / Table 10.</b> Did the four elements encourage you to think more deeply about your source? Question 3. Four students skipped this question.</figcaption></figure>
+<h4>Reconciling the prompted and unprompted responses</h4>
+<p>When asked directly, 82% said the four elements prompted deeper thinking. When asked openly what the agent did well, only five students mentioned deeper thinking, the framework, or learning something they could reuse.</p>
+<p>The likely explanation is that the two questions measure different things. Question 3 names the framework and asks students to agree or disagree; Question 2 asks what comes to mind first. Both results are real: the framework did prompt deeper thinking when students were pointed at it, and it was not what most students reached for when describing the experience unprompted. One interpretation is that students noticed the benefits of the framework when asked about it directly, but did not always explicitly attribute those benefits to the framework in open-ended responses. Students may need it named in class to notice they are using it.</p>
 <h4>Was the agent enough on its own?</h4>
-<p class="qmeta">Question 4 · 85 of 89 answered.</p>
-<p>Only twelve students said the agent was enough on its own. Sixty-nine said they wanted other kinds of support as well, or needed other support more.</p>
-<figure data-spec="q4">
-  <figcaption><b>Table 12 / Figure 11.</b> Students, out of the 85 who answered. Four skipped this question.</figcaption>
-</figure>
-
+<p>Most students viewed the agent as one component of a broader support ecosystem rather than as a standalone source of support. Sixty-nine said they wanted other kinds of support as well, or needed other support more.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;The chatbot was helpful, but I wanted other support too&quot;, &quot;I needed other kinds of support more than the chatbot&quot;, &quot;The chatbot was enough on its own&quot;, &quot;The chatbot didn&#x27;t really help, I relied on other support&quot;, &quot;I&#x27;m not sure&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[33.0, 25.0, 12.0, 11.0, 4.0]]}" data-title="Was the agent enough on its own?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Answer</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 85</th></tr></thead><tbody><tr><td class="">The chatbot was helpful, but I wanted other support too</td><td class=" r">33</td><td class=" r">39%</td></tr><tr><td class="">I needed other kinds of support more than the chatbot</td><td class=" r">25</td><td class=" r">29%</td></tr><tr><td class="">The chatbot was enough on its own</td><td class=" r">12</td><td class=" r">14%</td></tr><tr><td class="">The chatbot didn't really help, I relied on other support</td><td class=" r">11</td><td class=" r">13%</td></tr><tr><td class="">I'm not sure</td><td class=" r">4</td><td class=" r">5%</td></tr></tbody></table></div><figcaption><b>Table 11.</b> Question 4. Four students skipped this question.</figcaption></figure>
 <h4>What other support would have helped?</h4>
-<p class="qmeta">Question 5 · 65 answered, of the 68 shown this question.</p>
-<p>Worked examples were the most requested support by a wide margin, followed closely by group discussion and more class time. Fifty-one of the 65 students who answered — more than three quarters — named at least one of four things: worked examples, group discussion, more class time, or a workshop.</p>
-<figure data-spec="q5">
-  <figcaption><b>Table 13 / Figure 12.</b> This question appeared only to students who had said the agent was not enough on its own, so it is not the whole cohort speaking. Students often named more than one kind of support, so the column adds to more than 65.</figcaption>
-</figure>
-<p>Almost none of what students asked for concerns the agent itself.</p>
-<blockquote><p>Workshop, more examples, exemplars!!!</p><cite>Student 32</cite></blockquote>
-<blockquote><p>Maybe more class time on source evaluation going through each one thoroughly rather than speeding through it on a slide show.</p><cite>Student 43</cite></blockquote>
-<blockquote><p>Group discussions would help us think more critically and hearing everyone's opinions helps build your own.</p><cite>Student 77</cite></blockquote>
-<blockquote><p>Group discussion and worked examples to develop individual critical thinking rather than outsourcing to AI.</p><cite>Student 27</cite></blockquote>
-<blockquote><p>All the listed examples are useful, but also including the downsides of using AI chatbots — including shallow or incomplete interpretations of the text, errors, and what hallucinations are, and how they might appear in this context.</p><cite>Student 88</cite></blockquote>
-
-<div class="note">
-  <h4>Student perspectives on timing</h4>
-  <p>Student 57: “the chat bot was nice but would have been more effective if we'd used it in tutorials together and if it was introduced prior to ‘evaluate your source, then use the chatbot to evaluate your source,’ because we already evaluated our source at that point so it felt redundant.”</p>
-  <p>Student 72 described the same gap differently: by the time the agent was useful for the verbal assessment, the class had moved on and “we weren't yet practiced enough in using it that it was an obvious go to for that task.”</p>
-  <p>The concentration of use shown in Figure 1 is the same pattern, observed from the students' side.</p>
-</div>
-
+<p>Worked examples were the most commonly requested additional support, followed by group discussion, more class time, and workshops. A total of 51 of the 65 students who answered (78%) named at least one of four forms of support: worked examples, group discussion, more class time, or a workshop.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Six further kinds, one student each&quot;, &quot;An FAQ or discussion board&quot;, &quot;In-person lectures&quot;, &quot;The support given was already enough&quot;, &quot;Face-to-face help from a teacher or tutor&quot;, &quot;Tutorials&quot;, &quot;A workshop&quot;, &quot;More class time on source evaluation&quot;, &quot;Group discussion with classmates&quot;, &quot;Worked examples or exemplars&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[6, 2, 3, 3, 4, 4, 14, 19, 19, 22]]}" data-title="What other support would have helped?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">What would have helped</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 65</th></tr></thead><tbody><tr><td class="">Worked examples or exemplars</td><td class=" r">22</td><td class=" r">34%</td></tr><tr><td class="">Group discussion with classmates</td><td class=" r">19</td><td class=" r">29%</td></tr><tr><td class="">More class time on source evaluation</td><td class=" r">19</td><td class=" r">29%</td></tr><tr><td class="">A workshop</td><td class=" r">14</td><td class=" r">22%</td></tr><tr><td class="">Tutorials</td><td class=" r">4</td><td class=" r">6%</td></tr><tr><td class="">Face-to-face help from a teacher or tutor</td><td class=" r">4</td><td class=" r">6%</td></tr><tr><td class="">The support given was already enough</td><td class=" r">3</td><td class=" r">5%</td></tr><tr><td class="">In-person lectures</td><td class=" r">3</td><td class=" r">5%</td></tr><tr><td class="">An FAQ or discussion board</td><td class=" r">2</td><td class=" r">3%</td></tr><tr><td class="">Six further kinds of support, one student each</td><td class=" r">6</td><td class=" r">9%</td></tr></tbody></table></div><figcaption><b>Figure 8 / Table 12.</b> What other support would have helped, shown only to students who said the agent was not enough. Question 5. This question appeared only to students who had said the agent was not enough on its own, so it is not the whole cohort speaking. Students often named more than one kind of support, so the column adds to more than 65.</figcaption></figure>
+<blockquote><p>“Group discussion and worked examples to develop individual critical thinking rather than outsourcing to AI.”</p><cite>Student 27</cite></blockquote>
+<blockquote><p>“Class time and discussions helped more than the chatbot did.”</p><cite>Student 66</cite></blockquote>
+<h4>Student perspectives on timing</h4>
+<p>Student 57: “the chat bot was nice but would have been more effective if we'd used it in tutorials together and if it was introduced prior to ‘evaluate your source, then use the chatbot to evaluate your source,’ because we already evaluated our source at that point so it felt redundant.”</p>
+<p>Student 72 described the same gap differently: by the time the agent was useful for the verbal assessment, the class had moved on and “we weren't yet practiced enough in using it that it was an obvious go to for that task.” The concentration of use shown earlier is the same pattern, observed from the students' side.</p>
 <h4>Would it work in other courses?</h4>
-<p class="qmeta">Questions 6 and 7 · 86 and 56 answered.</p>
 <p>Most students were open to it: 23% said yes definitely, 31% yes for some tasks, and 31% maybe depending on how it was set up. Thirteen percent said probably not or no.</p>
-<figure data-spec="q6">
-  <figcaption><b>Table 14 / Figure 13.</b> Students, out of the 86 who answered. Three skipped this question.</figcaption>
-</figure>
-<p>Asked where it would fit, students mostly imagined more of the same: research-based assignments (12 students), essays and reports (9). The second most common answer, from ten students, was finding or filtering sources — a function the agent does not provide. Five imagined it giving feedback on drafts before submission. Three named framework-based work specifically, including Te Tiriti and cultural safety assignments, and one named clinical practice.</p>
-<blockquote><p>A tool like this is most useful for courses that require evaluating sources using a framework like Te Whatu Aho Rau. It helped me check if my evaluation points made sense before submitting. The setup that made a difference was having the framework elements already loaded into the chatbot so I didn't have to explain them each time.</p><cite>Student 60</cite></blockquote>
-<blockquote><p>I think it would be a useful tool when selecting and evaluating evidence for clinical practice. It could also help when sharing health information with clients.</p><cite>Student 71</cite></blockquote>
-
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Yes, for some types of tasks&quot;, &quot;Maybe, depending on how it was set up&quot;, &quot;Yes, definitely&quot;, &quot;Probably not&quot;, &quot;No&quot;, &quot;I&#x27;m not sure&quot;], &quot;series&quot;: [&quot;Students&quot;], &quot;vals&quot;: [[27.0, 27.0, 20.0, 6.0, 5.0, 1.0]]}" data-title="Would it work in other courses?" data-sub="Semester 1 survey responses"><div class="scroll"><table><thead><tr><th scope="col">Answer</th><th scope="col" class="r">Students</th><th scope="col" class="r">% of 86</th></tr></thead><tbody><tr><td class="">Yes, for some types of tasks</td><td class=" r">27</td><td class=" r">31%</td></tr><tr><td class="">Maybe, depending on how it was set up</td><td class=" r">27</td><td class=" r">31%</td></tr><tr><td class="">Yes, definitely</td><td class=" r">20</td><td class=" r">23%</td></tr><tr><td class="">Probably not</td><td class=" r">6</td><td class=" r">7%</td></tr><tr><td class="">No</td><td class=" r">5</td><td class=" r">6%</td></tr><tr><td class="">I'm not sure</td><td class=" r">1</td><td class=" r">1%</td></tr></tbody></table></div><figcaption><b>Table 13.</b> Question 6. Three students skipped this question.</figcaption></figure>
+<p>When asked where a similar agent might be useful, students most commonly identified research-based assignments, essays, and reports. Several also suggested tasks involving structured frameworks, reflection, or feedback on written work.. research-based assignments (12 students), essays and reports (9). The second most common answer, from ten students, was finding or filtering sources — a function the agent does not provide. Five imagined it giving feedback on drafts before submission. Three named framework-based work specifically, including Te Tiriti and cultural safety assignments, and one named clinical practice.</p>
+<blockquote><p>“The setup that made a difference was having the framework elements already loaded into the chatbot so I didn't have to explain them each time.”</p><cite>Student 60</cite></blockquote>
 <h4>Anything else?</h4>
-<p class="qmeta">Question 8 · 54 of 89 answered.</p>
-<p>Most had nothing further to add: 31 answered “no” or similar, and seven closed with thanks or an endorsement. Six gave a position on AI in education, which the earlier questions had not asked for directly. Across the whole survey, five students said AI should not be used in academic work. A sixth, positive about the agent elsewhere, was concerned about students relying on it instead of thinking.</p>
-<blockquote><p>I think if there was a chatbot to help with evaluation, people would rely solely on that and not get the benefit of thought in the learning process.</p><cite>Student 72</cite></blockquote>
-<blockquote><p>I don't agree with the direction this sort of method guides education towards, teach critical thinking skills rather than how to bypass the need for it.</p><cite>Student 27</cite></blockquote>
-<blockquote><p>It was kind of a last resort, I didn't know how to access it at first. It would be cool if it helped us see how we were tracking on our assignments.</p><cite>Student 15</cite></blockquote>
-<blockquote><p>It hit dead ends and that's what really made it unappealing. [...] I got shut down so many times I stopped considering it something to try when I needed help.</p><cite>Student 57</cite></blockquote>
-
-<h3 id="s2-usage">Semester 2 usage patterns</h3>
-<p class="tag">Usage records · Semester 2 only · 22 July to 30 August 2026</p>
-<p>Semester 2 on its own terms, using the same measures as Semester 1; the comparison follows. The dataset comprised 339 conversations and 5,558 messages from 132 of the 442 enrolled students — 30% of the cohort — with the assessment due Friday 21 August 2026. There was no Semester 2 survey, so everything here comes from usage records.</p>
-
+<p>Most had nothing further to add: 31 of the 54 who answered said “no” or similar, and seven closed with thanks or an endorsement. Six gave a position on AI in education, which the earlier questions had not asked for directly. Across the whole survey, 5 students expressed concerns about the role of AI in higher education. These concerns included the potential impact on critical thinking, academic integrity, and the broader direction of educational practice.</p>
+<blockquote><p>“I don't agree with the direction this sort of method guides education towards, teach critical thinking skills rather than how to bypass the need for it.”</p><cite>Student 27</cite></blockquote>
+<blockquote><p>“It was kind of a last resort, I didn't know how to access it at first.”</p><cite>Student 15</cite></blockquote>
+<h3 id="semester-2-usage-patterns">Semester 2 usage patterns</h3>
+<p class="tag">USAGE RECORDS · SEMESTER 2 ONLY · 22 JULY TO 30 AUGUST 2026</p>
+<p>Semester 2 is reported here using the same measures as Semester 1. The comparison between semesters is presented in the following section. The dataset comprised 339 conversations and 5,558 messages from 132 of the 442 enrolled students (30% of the cohort) with the assessment due Friday 21 August 2026. There was no Semester 2 survey, so everything in this section comes from usage records.</p>
 <h4>Use across the semester</h4>
-<p>Use built gradually from late July and peaked in the week beginning 17 August, which accounted for 47% of the semester's conversations. A third of all conversations fell in the final three days before submission, and a quarter came more than a fortnight ahead of it.</p>
-<figure data-spec="weekly2">
-  <figcaption><b>Table 15 / Figure 14.</b> Semester 2 conversations per week. Most students had already used the agent before the busiest week.</figcaption>
-</figure>
-
+<p>Use increased steadily throughout the assessment period and peaked in the week beginning 17 August, which accounted for 47% of the semester's conversations. 32% of conversations occurred in the final three days before submission, while 24% took place more than two weeks before the due date..</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;stack&quot;, &quot;cats&quot;: [&quot;20 Jul&quot;, &quot;27 Jul&quot;, &quot;3 Aug&quot;, &quot;10 Aug&quot;, &quot;17 Aug&quot;, &quot;24 Aug&quot;, &quot;7 Sep+&quot;], &quot;series&quot;: [&quot;Guide me step by step&quot;, &quot;Help me improve what I started&quot;, &quot;Give me feedback on my table&quot;, &quot;Outside the design&quot;], &quot;vals&quot;: [[9, 19, 34, 33, 77, 7, 2], [1, 4, 4, 4, 12, 1, 0], [1, 9, 7, 25, 54, 4, 0], [0, 3, 1, 8, 15, 3, 2]], &quot;due&quot;: 4, &quot;dueLabel&quot;: &quot;due&quot;}" data-title="Use across the semester" data-sub="Semester 2 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Week beginning</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">% of total</th><th scope="col" class="r">Messages</th><th scope="col" class="r">Students</th></tr></thead><tbody><tr><td class="">20 Jul</td><td class=" r">11</td><td class=" r">3.2%</td><td class=" r">146</td><td class=" r">9</td></tr><tr><td class="">27 Jul</td><td class=" r">35</td><td class=" r">10.3%</td><td class=" r">518</td><td class=" r">21</td></tr><tr><td class="">3 Aug</td><td class=" r">46</td><td class=" r">13.6%</td><td class=" r">774</td><td class=" r">26</td></tr><tr><td class="">10 Aug</td><td class=" r">70</td><td class=" r">20.6%</td><td class=" r">1,224</td><td class=" r">39</td></tr><tr><td class="">17 Aug</td><td class=" r">158</td><td class=" r">46.6%</td><td class=" r">2,540</td><td class=" r">80</td></tr><tr><td class="">24 Aug</td><td class=" r">15</td><td class=" r">4.4%</td><td class=" r">320</td><td class=" r">9</td></tr><tr><td class="">7 Sep – 28 Sep</td><td class=" r">4</td><td class=" r">1.2%</td><td class=" r">36</td><td class=" r">4</td></tr></tbody></table></div><figcaption><b>Figure 9 / Table 14.</b> Conversations per week, split by mode of use. The assessment was due in the week beginning 17 August. Most students had used the agent before the peak week of activity.</figcaption></figure>
 <h4>When students used it</h4>
-<p>Fifty-seven percent of Semester 2 conversations began outside standard working hours, and 50 students — 38% of users — never accessed the agent during weekday working hours. The busiest single hour was midday.</p>
-<figure data-spec="timing2">
-  <figcaption><b>Table 16 / Figure 15.</b> Same definitions as Table 3. The categories overlap; only the first two rows total 100%.</figcaption>
-</figure>
-
+<p>As in Semester 1, use extended beyond standard working hours. Fifty-seven percent of conversations began outside weekday working hours, and 50 students (38% of users) never accessed the agent during those times. The busiest single hour was midday.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Within work hours (Mon\u2013Sun 8am\u20134pm)&quot;, &quot;After hours (outside Mon\u2013Sun 8am\u20134pm)&quot;, &quot;Weekend (Saturday or Sunday)&quot;, &quot;Peak time (started 12\u20131pm NZT)&quot;, &quot;Started early morning (12am\u20136am NZT)&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[147.0, 192.0, 67.0, 31.0, 30.0]]}" data-title="When students used it" data-sub="Semester 2 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Timing pattern</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">% of total</th></tr></thead><tbody><tr><td class="">Within work hours (Mon–Sun 8am–4pm)</td><td class=" r">147 of 339</td><td class=" r">43.4%</td></tr><tr><td class="">After hours (outside Mon–Sun 8am–4pm)</td><td class=" r">192 of 339</td><td class=" r">56.6%</td></tr><tr><td class="">Weekend (Saturday or Sunday)</td><td class=" r">67 of 339</td><td class=" r">19.8%</td></tr><tr><td class="">Peak time (started 12–1pm NZT)</td><td class=" r">31 of 339</td><td class=" r">9.1%</td></tr><tr><td class="">Started early morning (12am–6am NZT)</td><td class=" r">30 of 339</td><td class=" r">8.8%</td></tr></tbody></table></div><figcaption><b>Table 15.</b> Same definitions as the Semester 1 timing table. The categories overlap; only the first two rows total 100%.</figcaption></figure>
 <h4>How students used the agent</h4>
-<p>Step-by-step guidance was the most common mode, at 53% of conversations, with feedback on a completed table at 29% and requests to improve a partial evaluation at 8%. Guided conversations ran to a median of 14 messages.</p>
-<figure data-spec="modes2only">
-  <figcaption><b>Table 17 / Figure 16.</b> Semester 2 conversations by mode of use, out of 339. As in Semester 1, conversations that began with a typed opening were read and counted with the mode they matched.</figcaption>
-</figure>
-
+<p>Step-by-step guidance was the most common mode of use, accounting for 53% of conversations. Feedback on a completed table represented 29% of conversations, while requests to improve a partial evaluation accounted for a further 8%. Guided conversations were also longer, with a median length of 14 messages.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Help me improve what I started&quot;, &quot;Outside the design&quot;, &quot;Give me feedback on my table&quot;, &quot;Guide me step by step&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[26, 32, 100, 181]]}" data-title="How students used the agent" data-sub="Semester 2 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">Mode of use</th><th scope="col" class="r">Conversations</th><th scope="col" class="r">Share</th><th scope="col" class="r">Students</th><th scope="col" class="r">Median length</th></tr></thead><tbody><tr><td class="">Guide me step by step</td><td class=" r">181</td><td class=" r">53%</td><td class=" r">84</td><td class=" r">14</td></tr><tr><td class="">Give me feedback on my table</td><td class=" r">100</td><td class=" r">29%</td><td class=" r">66</td><td class=" r">7</td></tr><tr><td class="">Outside the design</td><td class=" r">32</td><td class=" r">9%</td><td class=" r">24</td><td class=" r">2</td></tr><tr><td class="">Help me improve what I started</td><td class=" r">26</td><td class=" r">8%</td><td class=" r">19</td><td class=" r">8</td></tr></tbody></table></div><figcaption><b>Figure 10 / Table 16.</b> Semester 2 conversations by mode of use, out of 339. As in Semester 1, conversations that began with a typed opening were read and counted with the mode they matched.</figcaption></figure>
 <h4>Use outside the agent's intended purpose</h4>
-<p>Thirty-two conversations — 9% of the semester — were about something other than source evaluation, mostly other parts of the report rather than work meant for a different tool. The Section 3 AUT Co-pilot prompt, which appeared 151 times in Semester 1, did not appear once.</p>
-<figure data-spec="outside2">
-  <figcaption><b>Table 18 / Figure 17.</b> Grouped by reading the conversations, so the boundaries between groups are approximate.</figcaption>
-</figure>
-
-<h3 id="s2-compare">Comparison across semesters</h3>
-<p class="tag">Usage records · both semesters</p>
-<p>The two semesters side by side, on usage records only. The agent did not change between them. Almost everything around it did: a cohort less than half the size, a different point in the year, and a different person coordinating the paper.</p>
-<figure>
-  <div class="scroll"><table>
-    <thead><tr><th scope="col">&nbsp;</th><th scope="col" class="r">Semester 1</th><th scope="col" class="r">Semester 2</th></tr></thead>
-    <tbody>
-      <tr><td>Students enrolled</td><td class="r">1,133</td><td class="r">442</td></tr>
-      <tr class="hi"><td>Students who used the agent</td><td class="r">751 (66%)</td><td class="r">132 (30%)</td></tr>
-      <tr><td>Conversations</td><td class="r">2,291</td><td class="r">339</td></tr>
-      <tr><td>Messages</td><td class="r">19,518</td><td class="r">5,558</td></tr>
-      <tr class="hi"><td>Used step-by-step guidance</td><td class="r">20%</td><td class="r">53%</td></tr>
-      <tr class="hi"><td>Sought feedback on finished work</td><td class="r">61%</td><td class="r">29%</td></tr>
-      <tr class="hi"><td>Students who ever used step-by-step guidance</td><td class="r">34%</td><td class="r">64%</td></tr>
-      <tr><td>Median guided conversation (messages)</td><td class="r">10</td><td class="r">14</td></tr>
-      <tr class="hi"><td>Started more than 2 weeks before the due date</td><td class="r">13%</td><td class="r">24%</td></tr>
-      <tr><td>Started in the final 3 days</td><td class="r">50%</td><td class="r">32%</td></tr>
-      <tr><td>Began outside working hours</td><td class="r">51%</td><td class="r">57%</td></tr>
-      <tr><td>Guided conversations covering all four elements</td><td class="r">51%</td><td class="r">54%</td></tr>
-      <tr><td>Conversations outside the agent's purpose</td><td class="r">12%</td><td class="r">9%</td></tr>
-    </tbody>
-  </table></div>
-  <figcaption><b>Table 19.</b> Developer testing and pre-release conversations excluded from both columns. Modes reallocated as described in Table 5. This table mixes counts, shares and medians, so it is not charted.</figcaption>
-</figure>
-
+<p>Thirty-two conversations (9% of the semester) were about something other than source evaluation, mostly other parts of the report rather than work meant for a different tool. Use related to the assessment Section 3 Copilot prompt, which had been common in Semester 1, did not appear in any Semester 2 conversations.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Another section of the report&quot;, &quot;Something else or unclear&quot;, &quot;Referencing and APA&quot;, &quot;Due dates, rubric and marks&quot;, &quot;The Section 3 AUT Copilot prompt&quot;], &quot;series&quot;: [&quot;Conversations&quot;], &quot;vals&quot;: [[18.0, 7.0, 5.0, 2.0, 0.0]]}" data-title="Use outside the agent&#x27;s intended purpose" data-sub="Semester 2 usage patterns"><div class="scroll"><table><thead><tr><th scope="col">What it was about</th><th scope="col" class="r">Conversations</th></tr></thead><tbody><tr><td class="">Another section of the report</td><td class=" r">18</td></tr><tr><td class="">Something else or unclear</td><td class=" r">7</td></tr><tr><td class="">Referencing and APA</td><td class=" r">5</td></tr><tr><td class="">Due dates, rubric and marks</td><td class=" r">2</td></tr><tr><td class="">The Section 3 AUT Copilot prompt</td><td class=" r">0</td></tr></tbody></table></div><figcaption><b>Table 17.</b> Grouped by reading the conversations, so the boundaries between groups are approximate.</figcaption></figure>
+<h3 id="comparison-across-semesters">Comparison across semesters</h3>
+<p class="tag">USAGE RECORDS · BOTH SEMESTERS</p>
+<p>The two semesters are set side by side here, on usage records only. The agent remained unchanged across the two semesters. However, the teaching context differed, including cohort size, timing within the academic year, and course coordination.</p>
+<figure class="fig viz" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Used step-by-step guidance&quot;, &quot;Sought feedback on finished work&quot;, &quot;Students who ever used step-by-step guidance&quot;, &quot;Started more than 2 weeks before the due date&quot;, &quot;Started in the final 3 days&quot;, &quot;Began outside working hours&quot;, &quot;Guided conversations covering all four elements&quot;, &quot;Conversations outside the agent&#x27;s purpose&quot;], &quot;series&quot;: [&quot;Semester 1&quot;, &quot;Semester 2&quot;], &quot;vals&quot;: [[20.0, 61.0, 34.0, 13.0, 50.0, 51.0, 51.0, 12.0], [53.0, 29.0, 64.0, 24.0, 32.0, 57.0, 54.0, 9.0]], &quot;suffix&quot;: &quot;%&quot;, &quot;note&quot;: &quot;Chart shows the percentage measures only. Counts and medians are in the table.&quot;, &quot;cmp&quot;: true}" data-title="Comparison across semesters" data-sub=""><div class="scroll"><table><thead><tr><th scope="col">Measure</th><th scope="col" class="r">Semester 1</th><th scope="col" class="r">Semester 2</th></tr></thead><tbody><tr><td class="">Students enrolled</td><td class=" r">1,133</td><td class=" r">442</td></tr><tr><td class="">Students who used the agent</td><td class=" r">751 (66%)</td><td class=" r">132 (30%)</td></tr><tr><td class="">Conversations</td><td class=" r">2,291</td><td class=" r">339</td></tr><tr><td class="">Messages</td><td class=" r">19,518</td><td class=" r">5,558</td></tr><tr><td class="">Used step-by-step guidance</td><td class=" r">20%</td><td class=" r">53%</td></tr><tr><td class="">Sought feedback on finished work</td><td class=" r">61%</td><td class=" r">29%</td></tr><tr><td class="">Students who ever used step-by-step guidance</td><td class=" r">34%</td><td class=" r">64%</td></tr><tr><td class="">Median guided conversation (messages)</td><td class=" r">10</td><td class=" r">14</td></tr><tr><td class="">Started more than 2 weeks before the due date</td><td class=" r">13%</td><td class=" r">24%</td></tr><tr><td class="">Started in the final 3 days</td><td class=" r">50%</td><td class=" r">32%</td></tr><tr><td class="">Began outside working hours</td><td class=" r">51%</td><td class=" r">57%</td></tr><tr><td class="">Guided conversations covering all four elements</td><td class=" r">51%</td><td class=" r">54%</td></tr><tr><td class="">Conversations outside the agent's purpose</td><td class=" r">12%</td><td class=" r">9%</td></tr></tbody></table></div><figcaption><b>Table 18.</b> Developer testing and pre-release conversations excluded from both columns. Modes reallocated as described earlier. This table mixes counts, shares and medians, so it is not charted.</figcaption></figure>
 <h4>Differences between the semesters</h4>
-<p>Three differences point the same way. Step-by-step guidance went from a fifth of conversations to more than half, and from a third of students to nearly two thirds. Requests for feedback on finished work halved. And students began earlier: a quarter of Semester 2 use came more than a fortnight ahead, against an eighth in Semester 1.</p>
-<figure data-spec="modes2">
-  <figcaption><b>Table 20 / Figure 18.</b> Mode of use as a share of each semester's conversations, the two semesters compared directly.</figcaption>
-</figure>
-
+<p>Three differences were particularly noticeable between the semesters. Step-by-step guidance increased from 20% of Semester 1 conversations to 53% of Semester 2 conversations. The proportion of students who used this mode at least once increased from 34% in Semester 1 to 64% in Semester 2. The proportion of conversations focused on feedback for completed work fell from 61% to 29%. And students began earlier, 24% of Semester 2 conversations began more than two weeks before the due date, compared with 13% in Semester 1.</p>
+<figure class="fig viz" data-title="Differences between the semesters" data-sub="Comparison across semesters" data-chart="{&quot;kind&quot;: &quot;bar&quot;, &quot;cats&quot;: [&quot;Outside the design&quot;, &quot;Give me feedback on my table&quot;, &quot;Help me improve what I started&quot;, &quot;Guide me step by step&quot;], &quot;series&quot;: [&quot;Semester 1&quot;, &quot;Semester 2&quot;], &quot;vals&quot;: [[12, 61, 6, 20], [9, 29, 8, 53]], &quot;suffix&quot;: &quot;%&quot;, &quot;cmp&quot;: true}"><figcaption><b>Figure 11.</b> Mode of use as a share of each semester's conversations.</figcaption></figure>
 <h4>Measures that did not differ</h4>
-<p>Two measures were effectively identical. Students progressed equally far through the four elements once guided — 51% covered all four in Semester 1, 54% in Semester 2 — and stopped at the same point in both, between the first element and the second. After-hours use was also similar, at 51% and 57%.</p>
-<p>The first matters most: because the drop-off held while everything else shifted, it looks like a property of the agent and the task rather than of the cohort or the teaching.</p>
+<p>Two measures were effectively identical. Students progressed equally far through the four elements once guided (51% covered all four in Semester 1, 54% in Semester 2) and stopped at the same point in both, between the first element and the second. After-hours use was also similar, at 51% and 57%.</p>
+<p>The consistency of this pattern across both semesters suggests that it may relate to the design of the task, the structure of the guided interaction, or both. The usage data alone cannot determine the reason.</p>
+<p>The Section 3 Co-pilot prompt, which appeared 151 times in Semester 1, appears not once in Semester 2. Use outside the agent's intended purpose fell from 12% to 9%, and what remained was mostly reflection writing rather than work meant for another tool. The absence of these conversations in Semester 2 suggests that the distinction between the Source Evaluator and the assessment section involving the use of Copilot may have been communicated differently. The usage data show the change, but not the reason for it.</p>
+<h4>Limitations of the comparison</h4>
+<p>These differences may partly reflect the change in course lead, but the cohorts differed substantially in size, with 1,133 students enrolled in Semester 1 and 442 in Semester 2, ran at different points in the year, and may differ in ways these records cannot show. With no Semester 2 survey, nothing in this section can speak to what students made of the agent, only to what they did with it.</p>
+<p>A narrower but useful conclusion can still be drawn. The same agent, implemented in a different teaching context and with a different cohort, was associated with substantially different patterns of use. Step-by-step guidance was available in both semesters. In Semester 1, 259 students (34% of users) engaged with step-by-step guidance at least once. In Semester 2, 84 students (64% of users) did so, and students also began using the agent earlier in the assessment period.</p>
+<h2 id="conclusions">Conclusions</h2>
+<h3 class="numbered">The agent achieved substantial uptake in Semester 1 and provided flexible access across both semesters</h3>
+<p>Te Whatu Aho Rau Source Evaluator achieved substantial uptake in Semester 1, with 751 students (66% of the cohort) using it at least once. Uptake was lower in Semester 2, at approximately 30% of the cohort. In both semesters, more than half of conversations occurred outside standard working hours: 51% in Semester 1 and 57% in Semester 2. This indicates that the agent extended access to assessment support beyond the times when staffed services were available.</p>
+<h3 class="numbered">Students used the agent for both feedback and learning</h3>
+<p>Students engaged with the agent in different ways depending on their needs. Feedback on completed evaluations was the dominant mode of use in Semester 1, while step-by-step guidance became the most common mode in Semester 2. Together, these patterns suggest that students valued both formative feedback and scaffolded support for learning how to apply the Te Whatu Aho Rau framework.</p>
+<h3 class="numbered">Students generally found the agent helpful, but not sufficient on its own</h3>
+<p>Most survey respondents reported that the agent helped them learn source evaluation and navigate the assessment requirements. However, students consistently described the agent as one component of a broader support environment rather than a substitute for teaching. Requests for worked examples, discussion opportunities, workshops, and additional class time suggest that students valued the agent most when it complemented other forms of learning support.</p>
+<h3 class="numbered">Teaching context influenced how students used the agent</h3>
+<p>The comparison between semesters showed that the same agent was associated with different patterns of use in different teaching contexts. Students engaged earlier in Semester 2, made greater use of the guided learning mode, and were less likely to use the agent for tasks outside its intended purpose. While the usage data cannot explain why these differences occurred, the findings suggest that how an agent is introduced and integrated into teaching influences how students engage with it.</p>
+<h3 class="numbered">Students need support to navigate multiple AI tools</h3>
+<p>The Semester 1 conversations revealed some uncertainty about the distinction between the Source Evaluator and AUT Co-pilot, with a number of students attempting to use the Source Evaluator for a different assessment task. This suggests that when multiple AI tools are used within a course, students benefit from clear guidance about the purpose, scope, and limitations of each tool.</p>
+<h3 class="numbered">The agent expanded access to learning support</h3>
+<p>Across both semesters, many students accessed the agent outside normal working hours, including evenings and weekends. For a substantial proportion of users, the agent provided support at times when traditional services were not available. Accessibility and flexibility therefore appear to be important aspects of the agent's value.</p>
+<h3 class="numbered">Students largely engaged with the agent responsibly</h3>
+<p>Concerns that students would use the agent to complete assessment tasks on their behalf were not supported by the usage records. Very few conversations involved attempts to have the agent generate assessment content. Instead, students predominantly used the tool to seek guidance, feedback, clarification, and support in applying the framework. The findings suggest that AI agents can support information literacy development when designed to scaffold student thinking rather than replace it.</p>
+<h2 id="recommendations">Recommendations</h2>
+<h3 class="numbered">Integrate the agent earlier into teaching activities</h3>
+<p>Introduce the agent before students begin the source evaluation component of the assessment. Earlier exposure may encourage students to engage with the guided learning functions before they reach the final stages of assignment preparation.</p>
+<h3 class="numbered">Position the agent as part of a wider support ecosystem</h3>
+<p>Continue presenting the agent alongside lectures, tutorials, workshops, library support, and other learning resources. Students consistently indicated that they found the agent most useful when it complemented, rather than replaced, other forms of support.</p>
+<h3 class="numbered">Increase visibility of the guided learning mode</h3>
+<p>Explicitly demonstrate the step-by-step guidance mode during teaching sessions and explain how it differs from feedback on completed work. This may encourage students to engage with the learning-focused features earlier in the assessment process.</p>
+<h3 class="numbered">Develop worked examples alongside the agent</h3>
+<p>Provide worked examples that demonstrate how the Te Whatu Aho Rau framework can be applied to source evaluation tasks. Survey respondents frequently requested examples, suggesting that they would be a valuable complement to the agent's question-based guidance.</p>
+<h3 class="numbered">Clarify the purposes of different AI tools</h3>
+<p>Provide clear explanations of the role, strengths, limitations, and intended uses of the Source Evaluator and AUT Co-pilot. Distinguishing between tools may help students select the most appropriate resource for a particular task.</p>
+<h3 class="numbered">Continue developing AI literacy and transparency</h3>
+<p>Support students to critically evaluate AI-generated responses and understand the limitations of AI tools. The agent should continue to be grounded in course resources and make the basis of its guidance visible to users.</p>
+<h3 class="numbered">Continue evaluation in future offerings</h3>
+<p>Continue monitoring usage patterns and student perceptions in future iterations of the course. Collecting comparable survey data across multiple semesters would strengthen future evaluations and help identify which aspects of implementation have the greatest influence on student engagement.</p>
 
-<div class="note">
-  <h4>Limitations of the comparison</h4>
-  <p>These differences may partly reflect the change in course lead, but the cohorts differed in size by a factor of two and a half, ran at different points in the year, and may differ in ways these records cannot show. With no Semester 2 survey, nothing here can speak to what students made of the agent — only to what they did with it.</p>
-  <p>What can be said is narrower and still useful: <i>the same agent, offered to a different cohort in a different teaching context, produced substantially different patterns of use.</i> Step-by-step guidance was available in both semesters. In one, a third of students used it; in the other, two thirds — and they started earlier.</p>
-</div>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>Each conclusion is labelled with the data behind it. Most rest on both sources; those resting on one are marked, and appear because they matter on their own.</p>
-<ul>
-  <li><b>The agent did the job students brought it.</b> <span class="src">Usage + survey</span> Six in ten Semester 1 conversations were feedback on finished work, at a median of four messages, and feedback was the most common thing students praised. Whether a quick check taught anything is not visible in the logs, and the survey is lukewarm: “a little” was the most common answer.</li>
-  <li><b>It was met too late to teach, and students said so.</b> <span class="src">Usage + survey</span> Half of Semester 1 conversations fell in the final three days, and students who came early asked to be guided three times more often. Two described the agent as redundant by the time the course pointed them at it.</li>
-  <li><b>Students wanted teaching, not a better agent.</b> <span class="src">Survey + usage</span> More than three quarters of those who said the agent was not enough asked for worked examples, discussion or class time. Almost none asked for improved AI, and the mode designed to teach was the least used in Semester 1.</li>
-  <li><b>Students could not always tell the two AI tools apart.</b> <span class="src">Usage + survey</span> A hundred and fifty-one conversations pasted in the prompt the assessment specifies for AUT Co-pilot, and the agent answered: four replies in 195 pointed elsewhere. Seventeen students mentioned Co-pilot, some asking whether it was the same tool.</li>
-  <li><b>Course framing changed how the agent was used; the agent did not change.</b> <span class="src one">Usage, both semesters</span> Guided use rose from 20% to 53% of conversations between semesters and students started earlier. There was no Semester 2 survey, so this rests on behaviour alone.</li>
-  <li><b>Half of the guided conversations stopped partway through the framework.</b> <span class="src one">Usage only</span> Only half covered all four elements, most stopping between the first and the second, and the figure held steady across both semesters — which points to the agent and the task rather than the teaching.</li>
-  <li><b>Accuracy is the most reported weakness.</b> <span class="src one">Survey only</span> Eleven students reported wrong or invented information from a tool whose subject is judging whether information can be trusted. Nothing in the usage records would have surfaced this.</li>
-</ul>
-<p>Five students object to AI in coursework on ethical, environmental or pedagogical grounds, consistently across several questions. A small minority of a self-selected sample, but a considered position.</p>
-<p><b>Limits.</b> One course, two semesters. Survey respondents chose to answer and are Semester 1 only, which is why every cross-semester statement rests on usage records. The logs show what students did, not what they understood. Conversations assigned to a mode by reading them are an interpretation, not a recorded fact. The analysis was carried out by the author, who also co-designed and built the agent.</p>
-
-</div>
-
-<h2 id="recs">Recommendations</h2>
-<p data-d="2">Five recommendations for the teaching team, ordered by the strength of the evidence behind them. The first two rest on both data sources. Most concern teaching and timing rather than the agent, because that is where both sources point.</p>
-<div class="recs">
-  <div class="rec"><span class="n">1</span><div>
-    <h3>Integrate the agent into the teaching of Section 2 <span class="src">Usage + survey</span></h3>
-    <p data-d="2">The agent is currently positioned where students meet it at the checking stage, and that is how they use it. Students who came more than a fortnight early asked to be guided three times more often than those arriving in the final three days, and students themselves described the agent as redundant once their evaluation was written. Everything students asked for in the survey points the same way: more than three quarters of those who said the agent was not enough wanted worked examples, discussion or class time.</p>
-    <ul class="acts" data-d="2">
-      <li>Add a required checkpoint that uses the agent <b>before</b> students write their evaluation.</li>
-      <li>Work through one source evaluation together in class first, so students have a model to measure the agent's feedback against.</li>
-      <li>Follow the agent step with a short discussion slot, which would also cover the elements half of guided conversations never reach.</li>
-      <li>Name the step-by-step mode in class: “start with the first button, not the third.”</li>
-    </ul>
-    <span class="ev" data-d="2">Usage: 42% guided more than 2 weeks out against 14% in the final 3 days; 61% opened with completed work; 51% of guided conversations covered all four elements · Survey: 22 of 65 asked for worked examples, 19 each for discussion and class time; Students 57 and 72 on timing</span>
-  </div></div>
-  <div class="rec"><span class="n">2</span><div>
-    <h3>Make the boundary between the two AI tools explicit <span class="src">Usage + survey</span></h3>
-    <p data-d="2">Students could not reliably distinguish the Source Evaluator from AUT Co-pilot, and the agent did nothing to help them. It answered work it was never built for rather than redirecting, and findability problems came up in three separate survey questions.</p>
-    <ul class="acts" data-d="2">
-      <li>Introduce both tools in the same class session, saying which is for which task.</li>
-      <li>Teach the agent to recognise out-of-scope requests and name the right tool instead of answering.</li>
-      <li>State on the Canvas page what the agent does and does not do — in particular that it does not find sources.</li>
-    </ul>
-    <span class="ev" data-d="2">Usage: 151 Co-pilot-prompt conversations, 4 of 195 replies redirected, 36 on referencing, 3 asked it to find sources · Survey: 17 mentioned Co-pilot; 10 in Q7 and 4 in Q2 imagined it finding sources</span>
-  </div></div>
-  <div class="rec"><span class="n">3</span><div>
-    <h3>Use the agent's limits as teaching material <span class="src">Survey, with a usage caution</span></h3>
-    <p data-d="2">Eleven students reported wrong or invented information, and one asked directly for teaching about what AI gets wrong. A tool that produces plausible-sounding errors in a course about judging information is a live demonstration rather than only a fault. The framework itself works but does not announce itself: it produced the strongest positive result in the survey, yet students rarely mentioned it unprompted.</p>
-    <ul class="acts" data-d="2">
-      <li>Build the agent's fallibility into the task as something students are asked to check.</li>
-      <li>Name Te Whatu Aho Rau explicitly when the agent is introduced, so students recognise the framework they are using.</li>
-    </ul>
-    <span class="ev" data-d="2">Survey: 11 students on accuracy in Q2, 1 explicit request in Q5; 82% in Q3 against 2 unprompted mentions in Q2 · Usage: 51% of guided conversations covered all four elements</span>
-  </div></div>
-  <div class="rec"><span class="n">4</span><div>
-    <h3>Offer an equivalent route for students who do not want to use AI <span class="src one">Survey only</span></h3>
-    <p data-d="2">Five students said AI should not be used in academic work, on ethical, environmental or pedagogical grounds, and held that position consistently across several questions. A non-AI path through the same task would respect it without weakening the assessment.</p>
-    <span class="ev" data-d="2">Survey: 5 students across Q2, Q5 and Q8</span>
-  </div></div>
-  <div class="rec"><span class="n">5</span><div>
-    <h3>Follow up two open questions before the next offering <span class="src one">Usage records</span></h3>
-    <p data-d="2">Two findings cannot be resolved from the data already collected, and both are cheap to answer.</p>
-    <ul class="acts" data-d="2">
-      <li>Read a sample of guided conversations that stop after the first element. Half of them do, and the figure held steady across both semesters, so course framing is unlikely to fix it.</li>
-      <li>Ask the Semester 2 course lead what they did differently. Guided use more than doubled, students started earlier, and the Co-pilot confusion disappeared entirely.</li>
-    </ul>
-    <span class="ev" data-d="2">Usage: 89% reached element 1, 63% element 2, 51% all four; 51% against 54% between semesters; 20% against 53% guided; 151 against 0 Co-pilot-prompt conversations</span>
-  </div></div>
-</div>
+<section class="disclaimer" aria-labelledby="ai-note"><h2 id="ai-note">Note on the preparation of the web version</h2><p>This web version was created from the author’s Word document using AUTGPT (Claude 4.6). AUTGPT was used only to convert the document into a web format, including the page layout, interactive charts, and accessibility features.</p><p>The analysis, interpretation, findings, conclusions, and recommendations are the author’s own. The conversion process did not alter the report’s wording or generate new content, data, figures, or interpretations.</p></section>
 
 <footer>
-  <p>Te Mātāpuna Library and Learning Services, Auckland University of Technology. Prepared by Camilo Amaya Lara, Information Literacy Librarian, Learning and Academic Engagement.</p>
-  <p>Student quotations are reproduced from anonymous survey responses. Usage records are de-identified. Survey questions used the term “chatbot”, which is retained in question wording and student quotations; elsewhere the tool is referred to as the agent.</p>
+  <p>Te Mātāpuna Library and Learning Services, Auckland University of Technology.</p>
+  <p>Student quotations are reproduced from anonymous survey responses. Usage records are de-identified.</p>
 </footer>
-
 </main>
 </div>
 </div>
-
 <script>
-const N = n => n.toLocaleString("en-NZ");
 
-/* Chart form is chosen by what the data is:
-   column  — ordered sequences (weeks, conversation-length bands)
-   bar     — unordered categories with long labels
-   grouped — the same categories compared across two semesters            */
-const SPEC = {
-  weekly1:{kind:"column",title:"Conversations per week",sub:"Semester 1 · week beginning · assessment due 2 April",
-    cols:["Week beginning","Conversations","% of total","Messages","Students"],
-    rows:[["2 Mar",62,"2.7%",828,38],["9 Mar",151,"6.6%",1362,68],["16 Mar",188,"8.2%",1472,89],
-          ["23 Mar",554,"24.2%",5046,228],["30 Mar",1280,"55.9%",10352,517],["6 Apr",35,"1.5%",274,15],
-          ["13 Apr",1,"0.0%",6,1],["20 Apr",13,"0.6%",152,5],["27 Apr – 18 May",7,"0.3%",26,5]],
-    x:0,y:1,short:["2 Mar","9 Mar","16 Mar","23 Mar","30 Mar","6 Apr","13 Apr","20 Apr","27 Apr+"],hi:4,
-    yLabel:"Conversations"},
-  timing1:{kind:"bar",title:"When students used the agent",sub:"Semester 1 · 2,291 conversations · categories overlap",
-    cols:["Timing pattern","Conversations","% of total"],
-    rows:[["Within work hours (Mon–Sun 8am–4pm)","1,121 of 2,291","48.9%"],
-          ["After hours (outside Mon–Sun 8am–4pm)","1,170 of 2,291","51.1%"],
-          ["Weekend (Saturday or Sunday)","379 of 2,291","16.5%"],
-          ["Peak time (started 2–3pm NZT)","209 of 2,291","9.1%"],
-          ["Started early morning (12am–6am NZT)","198 of 2,291","8.6%"]],
-    x:0,vals:[1121,1170,379,209,198],total:2291,unit:"conversations",hi:1},
-  length1:{kind:"column",title:"How long conversations ran",sub:"Semester 1 · 2,291 conversations · median 4 messages",
-    cols:["Length of conversation","Conversations","% of total"],
-    rows:[["2 messages — one question, one answer",556,"24%"],["4 to 6 messages",945,"41%"],
-          ["8 to 14 messages",454,"20%"],["16 to 30 messages",228,"10%"],["32 messages or more",108,"5%"]],
-    x:0,y:1,short:["2","4–6","8–14","16–30","32+"],hi:1,yLabel:"Conversations"},
-  modes1:{kind:"bar",title:"How students used the agent",sub:"Semester 1 · 2,291 conversations",
-    cols:["How they used it","Conversations","Share","Students","Median length"],
-    rows:[["Give me feedback on my table",1405,"61%",665,4],["Guide me step by step",455,"20%",259,10],
-          ["Help me improve what I started",147,"6%",94,10],["Outside the design",284,"12%",153,2]],
-    x:0,vals:[1405,455,147,284],total:2291,unit:"conversations",hi:0},
-  outside1:{kind:"bar",title:"Use outside the agent's intended purpose",sub:"Semester 1 · 284 conversations",
-    cols:["What they used it for","Conversations"],
-    rows:[["The Section 3 AUT Co-pilot prompt",151],["Referencing and APA",36],["Another section of the report",34],
-          ["Help with writing or editing",16],["Due dates, rubric and marks",11],["Finding sources",3],
-          ["Something else or unclear",33]],
-    x:0,vals:[151,36,34,16,11,3,33],total:284,unit:"conversations",hi:0},
-  q1:{kind:"bar",title:"Did the chatbot help you learn how to evaluate scholarly sources?",sub:"Students, out of the 85 who answered",
-    cols:["Answer","Students","% of 85"],
-    rows:[["Yes, a little",44,"52%"],["Yes, a lot",21,"25%"],["Not really",12,"14%"],["No, not at all",5,"6%"],["I'm not sure",3,"4%"]],
-    x:0,vals:[44,21,12,5,3],total:85,unit:"students",hi:0},
-  q2well:{kind:"bar",title:"What students said the agent did well",sub:"Students, out of the 73 who answered",
-    cols:["What students said it did well","Students","% of 73"],
-    rows:[["Gave feedback on my work",13,"18%"],[" Showed me what to improve",3,"4%",1],[" Gave feedback (general)",2,"3%",1],
-          [" Gave practical tips and examples",2,"3%",1],[" Seven further kinds of feedback, one student each",7,"10%",1],
-          ["Made evaluation easier to understand",10,"14%"],[" Made things clearer",6,"8%",1],
-          [" Explained it in different words",2,"3%",1],[" Clarified meanings and context",2,"3%",1],
-          [" Two further kinds of explaining, one student each",2,"3%",1],
-          ["Explained what source evaluation involves",8,"11%"],[" Explained source evaluation clearly",4,"5%",1],
-          [" Clarified what makes a source credible",2,"3%",1],[" Two further kinds of explaining, one student each",2,"3%",1],
-          ["Was quick and easy to use",8,"11%"],[" Summarised things",4,"5%",1],[" Was easy to use",2,"3%",1],
-          [" Worked quickly",2,"3%",1],[" Available outside campus hours",1,"1%",1],
-          ["Helped me find sources",6,"8%"],["Gave me answers or information to use",6,"8%"],
-          ["Broke the task into steps",5,"7%"],["Did the evaluating for me",5,"7%"],
-          ["Connected it to the assignment",5,"7%"],["Made me think about the agent itself",4,"5%"],
-          ["Made me think more deeply",3,"4%"],["Nothing — I didn't use it",3,"4%"],
-          ["Made the task feel less overwhelming",2,"3%"],["Helped me with the Te Whatu Aho Rau elements",2,"3%"],
-          ["Taught me strategies I could use again",1,"1%"]],
-    chartRows:[["Gave feedback on my work",13],["Made evaluation easier to understand",10],
-      ["Explained what source evaluation involves",8],["Was quick and easy to use",8],["Helped me find sources",6],
-      ["Gave me answers or information to use",6],["Broke the task into steps",5],["Did the evaluating for me",5],
-      ["Connected it to the assignment",5],["Made me think about the agent itself",4],["Made me think more deeply",3],
-      ["Nothing — I didn't use it",3],["Made the task feel less overwhelming",2],
-      ["Helped me with the Te Whatu Aho Rau elements",2],["Taught me strategies I could use again",1]],
-    total:73,unit:"students",hi:0},
-  q22p:{kind:"bar",title:"Problems students described",sub:"Students, out of the 67 who answered",
-    cols:["Problem","Students","% of 67"],
-    rows:[["Gave wrong or made-up information",11,"16%"],["Hard to find on Canvas",4,"6%"],["Repeated itself",3,"4%"],
-          ["Feedback too general",3,"4%"],["Layout hard to use",3,"4%"],["Only answered, didn't ask questions",2,"3%"],
-          ["No clear stopping point",2,"3%"],["Got confused or off-topic",1,"1%"],["Didn't save my work",1,"1%"],
-          ["Answers felt pre-written",1,"1%"],["Contradicted the teacher",1,"1%"],["Too prescriptive",1,"1%"],
-          ["Suggested unnecessary edits",1,"1%"]],
-    x:0,vals:[11,4,3,3,3,2,2,1,1,1,1,1,1],total:67,unit:"students",hi:0},
-  q22q:{kind:"bar",title:"Changes students asked for",sub:"Students, out of the 67 who answered",
-    cols:["Change requested","Students","% of 67"],
-    rows:[["Nothing to improve / satisfied",12,"18%"],["More detail in responses",5,"7%"],
-          ["Easier to access or navigate",3,"4%"],["Options for further help",2,"3%"],
-          ["Guidance on how to use it well",2,"3%"],["More probing questions",2,"3%"],["Real-world examples",2,"3%"],
-          ["A save function",1,"1%"],["Lecturers to confirm it's allowed",1,"1%"],["More human-like responses",1,"1%"],
-          ["Better link to the databases",1,"1%"],["More constructive responses",1,"1%"],["More features or polish",1,"1%"]],
-    x:0,vals:[12,5,3,2,2,2,2,1,1,1,1,1,1],total:67,unit:"students",hi:0},
-  q3:{kind:"bar",title:"Did the four elements encourage you to think more deeply about your source?",sub:"Students, out of the 85 who answered",
-    cols:["Answer","Students","% of 85"],
-    rows:[["Yes, it made me consider things I wouldn't have thought of",36,"42%"],
-          ["A little, it prompted some deeper thinking",34,"40%"],
-          ["Not really, I approached it the same way I usually would",13,"15%"],
-          ["I haven't evaluated sources before, so I can't compare",1,"1%"],["I'm not sure",1,"1%"]],
-    x:0,vals:[36,34,13,1,1],total:85,unit:"students",hi:0},
-  q4:{kind:"bar",title:"Was the support from the chatbot enough on its own?",sub:"Students, out of the 85 who answered",
-    cols:["Answer","Students","% of 85"],
-    rows:[["The chatbot was helpful, but I wanted other support too",33,"39%"],
-          ["I needed other kinds of support more than the chatbot",25,"29%"],
-          ["The chatbot was enough on its own",12,"14%"],
-          ["The chatbot didn't really help, I relied on other support",11,"13%"],["I'm not sure",4,"5%"]],
-    x:0,vals:[33,25,12,11,4],total:85,unit:"students",hi:0},
-  q5:{kind:"bar",title:"What other support would have helped",sub:"Students, out of the 65 who answered",
-    cols:["What students said would have helped","Students","% of 65"],
-    rows:[["Worked examples or exemplars",22,"34%"],["Group discussion with classmates",19,"29%"],
-          ["More class time on source evaluation",19,"29%"],["A workshop",14,"22%"],["Tutorials",4,"6%"],
-          ["Face-to-face help from a teacher or tutor",4,"6%"],["The support given was already enough",3,"5%"],
-          ["In-person lectures",3,"5%"],["An FAQ or discussion board",2,"3%"],["A step-by-step guide",1,"2%"],
-          ["One-on-one time in class",1,"2%"],["Being better prepared before starting the course",1,"2%"],
-          ["Teaching about what AI chatbots get wrong",1,"2%"],["Guidance on how to use the agent well",1,"2%"]],
-    x:0,vals:[22,19,19,14,4,4,3,3,2,1,1,1,1,1],total:65,unit:"students",hi:0},
-  q6:{kind:"bar",title:"Would a chatbot like this be useful in your other health science courses?",sub:"Students, out of the 86 who answered",
-    cols:["Answer","Students","% of 86"],
-    rows:[["Yes, for some types of tasks",27,"31%"],["Maybe, depending on how it was set up",27,"31%"],
-          ["Yes, definitely",20,"23%"],["Probably not",6,"7%"],["No",5,"6%"],["I'm not sure",1,"1%"]],
-    x:0,vals:[27,27,20,6,5,1],total:86,unit:"students",hi:0},
-  modes2:{kind:"grouped",title:"How students used the agent",sub:"Share of each semester's conversations",
-    cols:["How they used it","Semester 1","Share","Semester 2","Share"],
-    rows:[["Guide me step by step",455,"20%",181,"53%"],["Help me improve what I started",147,"6%",26,"8%"],
-          ["Give me feedback on my table",1405,"61%",100,"29%"],["Outside the design",284,"12%",32,"9%"]],
-    pairs:[[455,181],[147,26],[1405,100],[284,32]],t1:2291,t2:339},
-  weekly2:{kind:"column",title:"Conversations per week",sub:"Semester 2 · week beginning · assessment due 21 August",
-    cols:["Week beginning","Conversations","% of total","Messages","Students"],
-    rows:[["20 Jul",11,"3.2%",146,9],["27 Jul",35,"10.3%",518,21],["3 Aug",46,"13.6%",774,26],
-          ["10 Aug",70,"20.6%",1224,39],["17 Aug",158,"46.6%",2540,80],["24 Aug",15,"4.4%",320,9],
-          ["7 Sep – 28 Sep",4,"1.2%",36,4]],
-    x:0,y:1,short:["20 Jul","27 Jul","3 Aug","10 Aug","17 Aug","24 Aug","7 Sep+"],hi:4,yLabel:"Conversations"},
-  tlS1:{kind:"stack",title:"Conversations per week, by mode of use",sub:"Semester 1 · assessment due Thursday 2 April",
-    series:["Guide me step by step","Help me improve what I started","Give me feedback on my table","Outside the design"],
-    cols:["Week beginning","Guided","Improve","Feedback","Outside","Total"],
-    rows:[["2 Mar",37,3,19,3,62],["9 Mar",64,8,54,25,151],["16 Mar",43,8,96,41,188],
-          ["23 Mar",120,37,329,68,554],["30 Mar",187,84,888,121,1280],["6 Apr",3,6,17,9,35],
-          ["13 Apr",0,0,1,0,1],["20 Apr",0,0,1,12,13],["27 Apr – 18 May",1,1,0,5,7]],
-    due:"30 Mar",yLabel:"Conversations"},
-  tlS2:{kind:"stack",title:"Conversations per week, by mode of use",sub:"Semester 2 · assessment due Friday 21 August",
-    series:["Guide me step by step","Help me improve what I started","Give me feedback on my table","Outside the design"],
-    cols:["Week beginning","Guided","Improve","Feedback","Outside","Total"],
-    rows:[["20 Jul",9,1,1,0,11],["27 Jul",19,4,9,3,35],["3 Aug",34,4,7,1,46],
-          ["10 Aug",33,4,25,8,70],["17 Aug",77,12,54,15,158],["24 Aug",7,1,4,3,15],
-          ["7 Sep – 28 Sep",2,0,0,2,4]],
-    due:"17 Aug",yLabel:"Conversations"},
-  modes2only:{kind:"bar",title:"How students used the agent",sub:"Semester 2 · 339 conversations",
-    cols:["How they used it","Conversations","Share","Students","Median length"],
-    rows:[["Guide me step by step",181,"53%",84,14],["Give me feedback on my table",100,"29%",66,7],
-          ["Outside the design",32,"9%",24,2],["Help me improve what I started",26,"8%",19,8]],
-    x:0,vals:[181,100,32,26],total:339,unit:"conversations",hi:0},
-  outside2:{kind:"bar",title:"Use outside the agent's intended purpose",sub:"Semester 2 · 32 conversations",
-    cols:["What they used it for","Conversations"],
-    rows:[["Another section of the report",18],["Something else or unclear",7],["Referencing and APA",5],
-          ["Due dates, rubric and marks",2],["The Section 3 AUT Co-pilot prompt",0]],
-    x:0,vals:[18,7,5,2,0],total:32,unit:"conversations",hi:0},
-  timing2:{kind:"bar",title:"When students used the agent",sub:"Semester 2 · 339 conversations · categories overlap",
-    cols:["Timing pattern","Conversations","% of total"],
-    rows:[["Within work hours (Mon–Sun 8am–4pm)","147 of 339","43.4%"],
-          ["After hours (outside Mon–Sun 8am–4pm)","192 of 339","56.6%"],
-          ["Weekend (Saturday or Sunday)","67 of 339","19.8%"],
-          ["Peak time (started 12–1pm NZT)","31 of 339","9.1%"],
-          ["Started early morning (12am–6am NZT)","30 of 339","8.8%"]],
-    x:0,vals:[147,192,67,31,30],total:339,unit:"conversations",hi:1}
-};
+(function(){
+  const bar=document.querySelector(".themebar");if(!bar)return;
+  const bs=[...bar.querySelectorAll("button")];
+  const apply=v=>{
+    if(v==="light"||v==="dark")document.documentElement.setAttribute("data-theme",v);
+    else document.documentElement.removeAttribute("data-theme");
+    bs.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.th===v)));
+  };
+  let v="auto";try{v=localStorage.getItem("tw-theme")||"auto";}catch(e){}
+  apply(v);
+  bs.forEach(b=>b.addEventListener("click",()=>{apply(b.dataset.th);
+    try{localStorage.setItem("tw-theme",b.dataset.th);}catch(e){}}));
+})();
+const N=n=>Number(n).toLocaleString("en-NZ");
+const el=(t,c,x)=>{const n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;};
+const sv=(t,a)=>{const n=document.createElementNS("http://www.w3.org/2000/svg",t);
+  for(const k in a)n.setAttribute(k,a[k]);return n;};
 
-function el(t,c,txt){const n=document.createElement(t);if(c)n.className=c;if(txt!=null)n.textContent=txt;return n;}
-function svgEl(t,attrs){const n=document.createElementNS("http://www.w3.org/2000/svg",t);
-  for(const k in attrs)n.setAttribute(k,attrs[k]);return n;}
-
-function barPane(s){
+function barPane(d){
   const host=el("div","rows");
-  const rows = s.chartRows || s.rows.map((r,i)=>[r[s.x],s.vals[i]]);
-  const max=Math.max(...rows.map(r=>r[1]));
-  rows.forEach(([label,n],i)=>{
-    const pct=Math.round(n/s.total*100);
+  const multi=d.series.length>1;
+  if(multi){
+    const lg=el("p","legend");
+    lg.innerHTML=d.series.map((s,i)=>'<span><i style="background:var(--m'+(i?1:0)+')"></i>'+s+'</span>').join("");
+    const w=el("div");w.append(lg,host);var root=w;
+  } else var root=host;
+  const max=Math.max(...d.vals.flat());
+  d.cats.forEach((c,i)=>{
     const row=el("div","row");
-    row.title=label+" — "+N(n)+" "+s.unit+" ("+pct+"%)";
-    row.append(el("div","row-label",label));
-    const track=el("div","track");
-    const bar=el("div","bar");
-    bar.style.setProperty("--w", n/max);
-    track.append(bar);
-    const v=el("span","val"); v.innerHTML="<b>"+N(n)+"</b> · "+pct+"%";
-    track.append(v); row.append(track); host.append(row);
-  });
-  return host;
-}
-
-function groupedPane(s){
-  const host=el("div","rows");
-  const leg=el("p","legend");
-  leg.innerHTML='<span><i style="background:var(--bar)"></i>Semester 1 ('+N(s.t1)+')</span>'+
-                '<span><i style="background:var(--bar-2)"></i>Semester 2 ('+N(s.t2)+')</span>';
-  const wrapEl=el("div"); wrapEl.append(leg,host);
-  const max=Math.max(...s.pairs.map(p=>Math.max(p[0]/s.t1,p[1]/s.t2)));
-  s.rows.forEach((r,i)=>{
-    const [a,b]=s.pairs[i], pa=a/s.t1, pb=b/s.t2;
-    const row=el("div","row");
-    row.title=r[0]+" — Semester 1: "+N(a)+" ("+Math.round(pa*100)+"%), Semester 2: "+N(b)+" ("+Math.round(pb*100)+"%)";
-    row.append(el("div","row-label",r[0]));
-    const pairs=el("div","pairs");
-    [[a,pa,""],[b,pb," b2"]].forEach(([v,p,cls])=>{
-      const line=el("div","track");
-      const bar=el("div","bar"+cls);
-      bar.style.setProperty("--w", p/max);
-      line.append(bar);
-      const sp=el("span","val"); sp.innerHTML="<b>"+Math.round(p*100)+"%</b> · "+N(v);
-      line.append(sp); pairs.append(line);
+    row.append(el("div","row-label",c));
+    const box=el("div",multi?"pairs":"track");
+    d.vals.forEach((series,si)=>{
+      const v=series[i];
+      const line=multi?el("div","track"):box;
+      const b=el("div","bar"+(si?" b1":""));
+      b.style.setProperty("--w",max?v/max:0);
+      const t=el("span","val");t.innerHTML="<b>"+N(v)+(d.suffix||"")+"</b>";
+      line.append(b,t);
+      if(multi)box.append(line);
     });
-    row.append(pairs); host.append(row);
+    row.append(box);
+    row.title=c+" — "+d.series.map((s,si)=>s+": "+N(d.vals[si][i])+(d.suffix||"")).join(", ");
+    host.append(row);
   });
-  return wrapEl;
+  return root;
 }
 
-function columnPane(s){
-  const vals=s.rows.map(r=>r[s.y]);
-  const labels=s.short||s.rows.map(r=>r[s.x]);
-  const n=vals.length, max=Math.max(...vals);
-  const W=720,H=300,L=52,R=14,T=22,B=46;
-  const iw=W-L-R, ih=H-T-B, step=iw/n, bw=Math.min(step*0.6,64);
-  const svg=svgEl("svg",{class:"col",viewBox:"0 0 "+W+" "+H,role:"img",
-    "aria-label":s.title+". "+s.rows.map(r=>r[s.x]+": "+r[s.y]).join("; ")});
-  const ticks=4, nice=Math.ceil(max/ticks/(max>1000?500:max>100?50:5))*(max>1000?500:max>100?50:5);
-  for(let i=0;i<=ticks;i++){
-    const v=nice*i, y=T+ih-(v/(nice*ticks))*ih;
-    svg.append(svgEl("line",{class:"g",x1:L,x2:W-R,y1:y,y2:y}));
-    const t=svgEl("text",{class:"yl",x:L-8,y:y+3.5}); t.textContent=N(v); svg.append(t);
-  }
-  const yt=svgEl("text",{class:"ax",x:2,y:T-8});
-  yt.textContent=s.yLabel||""; svg.append(yt);
-  vals.forEach((v,i)=>{
-    const h=(v/(nice*ticks))*ih, x=L+step*i+(step-bw)/2, y=T+ih-h;
-    const r=svgEl("rect",{class:"b"+(i===s.hi?" hi":""),x:x,y:y,width:bw,height:Math.max(h,1)});
-    const ttl=svgEl("title"); ttl.textContent=s.rows[i][s.x]+": "+N(v); r.append(ttl);
-    svg.append(r);
-    const vl=svgEl("text",{class:"vl",x:x+bw/2,y:y-5}); vl.textContent=N(v); svg.append(vl);
-    const xl=svgEl("text",{class:"xl",x:x+bw/2,y:T+ih+17}); xl.textContent=labels[i]; svg.append(xl);
-  });
-  return svg;
-}
-
-function tablePane(s){
-  const sc=el("div","scroll"), t=el("table");
-  const th=el("thead"), tr=el("tr");
-  s.cols.forEach((c,i)=>{const h=el("th",i>0?"r":null,c);h.setAttribute("scope","col");tr.append(h);});
-  th.append(tr); t.append(th);
-  const tb=el("tbody");
-  s.rows.forEach((r,ri)=>{
-    const row=el("tr");
-    const indented = r.length>s.cols.length && r[r.length-1]===1;
-    if(!indented && ri===s.hi) row.classList.add("hi");
-    r.slice(0,s.cols.length).forEach((c,i)=>{
-      const td=el("td", i>0?"r":(indented?"ind":null), typeof c==="number"?N(c):String(c).trim());
-      row.append(td);
-    });
-    tb.append(row);
-  });
-  t.append(tb); sc.append(t);
-  return sc;
-}
-
-
-function stackPane(s){
-  const n=s.rows.length, k=s.series.length;
-  const totals=s.rows.map(r=>r.slice(1,1+k).reduce((a,b)=>a+b,0));
-  const max=Math.max(...totals);
-  const W=760,H=320,L=56,R=14,T=24,B=48;
-  const iw=W-L-R, ih=H-T-B, step=iw/n, bw=Math.min(step*0.62,62);
+function colPane(d){
+  const stacked=d.kind==="stack";
+  const n=d.cats.length,k=d.vals.length;
+  const tot=d.cats.map((_,i)=>stacked?d.vals.reduce((a,s)=>a+s[i],0):d.vals[0][i]);
+  const max=Math.max(...tot);
+  const W=760,H=320,L=56,R=14,T=24,Bm=50;
+  const iw=W-L-R,ih=H-T-Bm,step=iw/n,bw=Math.min(step*0.62,62);
   const wrap=el("div");
-  const leg=el("p","mlegend");
-  leg.innerHTML=s.series.map((t,i)=>'<span><i style="background:var(--m'+i+')"></i>'+t+'</span>').join("");
-  const svg=svgEl("svg",{class:"stack",viewBox:"0 0 "+W+" "+H,role:"img",
-    "aria-label":s.title+". "+s.rows.map((r,i)=>r[0]+": "+totals[i]).join("; ")});
-  const ticks=4, unit=max>1000?500:max>100?50:5;
+  if(k>1){
+    const lg=el("p","legend");
+    lg.innerHTML=d.series.map((s,i)=>'<span><i style="background:var(--m'+i+')"></i>'+s+'</span>').join("");
+    wrap.append(lg);
+  }
+  const svg=sv("svg",{class:"ch",viewBox:"0 0 "+W+" "+H,role:"img",
+    "aria-label":d.cats.map((c,i)=>c+": "+tot[i]+(d.due===i?" (assessment due this week)":"")).join("; ")});
+  const unit=max>1000?500:max>100?50:5,ticks=4;
   const nice=Math.ceil(max/ticks/unit)*unit;
   for(let i=0;i<=ticks;i++){
-    const v=nice*i, y=T+ih-(v/(nice*ticks))*ih;
-    svg.append(svgEl("line",{class:"g",x1:L,x2:W-R,y1:y,y2:y}));
-    const t=svgEl("text",{class:"yl",x:L-8,y:y+3.5}); t.textContent=N(v); svg.append(t);
+    const v=nice*i,y=T+ih-(v/(nice*ticks))*ih;
+    svg.append(sv("line",{class:"g",x1:L,x2:W-R,y1:y,y2:y}));
+    const t=sv("text",{class:"yl",x:L-8,y:y+3.5});t.textContent=N(v);svg.append(t);
   }
-  const yt=svgEl("text",{class:"ax",x:2,y:T-9}); yt.textContent=s.yLabel||""; svg.append(yt);
-  s.rows.forEach((r,i)=>{
-    const x=L+step*i+(step-bw)/2;
-    let acc=0;
-    for(let j=0;j<k;j++){
-      const v=r[1+j]; if(!v) {acc+=v; continue;}
+  d.cats.forEach((c,i)=>{
+    const x=L+step*i+(step-bw)/2;let acc=0;
+    d.vals.forEach((series,si)=>{
+      const v=series[i];if(!v){acc+=v;return;}
       const h=(v/(nice*ticks))*ih;
-      const y=T+ih-((acc+v)/(nice*ticks))*ih;
-      const rect=svgEl("rect",{class:"s"+j,x:x,y:y,width:bw,height:Math.max(h,0.8)});
-      const ttl=svgEl("title"); ttl.textContent=r[0]+" · "+s.series[j]+": "+N(v); rect.append(ttl);
-      svg.append(rect); acc+=v;
-    }
-    const vl=svgEl("text",{class:"xl",x:x+bw/2,y:T+ih-(totals[i]/(nice*ticks))*ih-6,
-      style:"font-weight:600;fill:var(--ink-2)"});
-    vl.textContent=N(totals[i]); svg.append(vl);
-    const xl=svgEl("text",{class:"xl",x:x+bw/2,y:T+ih+17}); xl.textContent=r[0]; svg.append(xl);
-    if(r[0]===s.due){
-      const cx=L+step*i+step/2;
-      svg.append(svgEl("line",{class:"due",x1:cx,x2:cx,y1:T-4,y2:T+ih}));
-      const d=svgEl("text",{class:"duet",x:cx+5,y:T+5}); d.textContent="due"; svg.append(d);
-    }
-  });
-  wrap.append(leg,svg);
-  return wrap;
-}
-
-function chartFor(s){
-  return s.kind==="column"?columnPane(s):s.kind==="grouped"?groupedPane(s):
-         s.kind==="stack"?stackPane(s):barPane(s);
-}
-
-function buildViz(specKey){
-  const s=SPEC[specKey]; if(!s) return null;
-  const box=el("div","viz");
-  const head=el("div","viz-head"), titles=el("div");
-  titles.append(el("p","viz-title",s.title));
-  if(s.sub) titles.append(el("p","viz-sub",s.sub));
-  const seg=el("div","seg");
-  seg.setAttribute("role","group"); seg.setAttribute("aria-label","Show "+s.title+" as");
-  const bC=el("button",null,"Chart"), bT=el("button",null,"Table");
-  bC.type="button"; bT.type="button";
-  bC.setAttribute("aria-pressed","true"); bT.setAttribute("aria-pressed","false");
-  seg.append(bC,bT); head.append(titles,seg);
-  const chart=el("div","pane"); chart.append(chartFor(s));
-  const table=el("div","pane t"); table.append(tablePane(s)); table.hidden=true;
-  const show=c=>{chart.hidden=!c; table.hidden=c;
-    bC.setAttribute("aria-pressed",String(c)); bT.setAttribute("aria-pressed",String(!c));};
-  bC.addEventListener("click",()=>show(true));
-  bT.addEventListener("click",()=>show(false));
-  box.append(head,chart,table);
-  return box;
-}
-
-document.querySelectorAll("figure[data-spec]").forEach(fig=>{
-  const box=buildViz(fig.dataset.spec); if(box) fig.prepend(box);
-});
-document.querySelectorAll("figure[data-swap]").forEach(fig=>{
-  ["s1","s2"].forEach(which=>{
-    const box=buildViz(fig.dataset[which]); if(!box) return;
-    box.dataset.semv = which.toUpperCase();
-    fig.prepend(box);
-  });
-});
-
-const links=[...document.querySelectorAll('nav.toc a')];
-const targets=links.map(a=>document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
-if('IntersectionObserver' in window){
-  const obs=new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(!e.isIntersecting) return;
-      links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      const y=T+ih-((stacked?acc+v:v)/(nice*ticks))*ih;
+      const r=sv("rect",{class:"s"+si,x:x,y:y,width:bw,height:Math.max(h,0.8)});
+      const ti=sv("title");ti.textContent=c+(k>1?" · "+d.series[si]:"")+": "+N(v);
+      r.append(ti);svg.append(r);acc+=v;
     });
-  },{rootMargin:'-10% 0px -80% 0px'});
-  targets.forEach(t=>obs.observe(t));
+    const vl=sv("text",{class:"vl",x:x+bw/2,y:T+ih-(tot[i]/(nice*ticks))*ih-6});
+    vl.textContent=N(tot[i]);svg.append(vl);
+    const xl=sv("text",{class:"xl",x:x+bw/2,y:T+ih+17});xl.textContent=c;svg.append(xl);
+  });
+  if(d.due!=null&&d.due>=0&&d.due<n){
+    const dx=L+step*d.due+step/2;
+    const ln=sv("line",{class:"due-line",x1:dx,x2:dx,y1:T-4,y2:T+ih});
+    const lt=sv("title");lt.textContent="Assessment due this week";ln.append(lt);
+    svg.append(ln);
+    const tg=sv("text",{class:"due-tag",x:dx+6,y:T+5});
+    tg.textContent=d.dueLabel||"due";svg.append(tg);
+    svg.querySelectorAll("text.vl").forEach(t=>svg.append(t));
+  }
+  wrap.append(svg);return wrap;
 }
 
-/* ---- depth and semester controls ---- */
-let DEPTH=2, SEM="S1";
+function tablePane(d){
+  const s=el("div","scroll"),t=el("table");
+  const th=el("thead"),tr=el("tr");
+  const h0=el("th",null,"Category");h0.setAttribute("scope","col");tr.append(h0);
+  d.series.forEach(x=>{const h=el("th","r",x);h.setAttribute("scope","col");tr.append(h);});
+  th.append(tr);t.append(th);
+  const tb=el("tbody");
+  d.cats.forEach((c,i)=>{
+    const r=el("tr");r.append(el("td",null,c));
+    d.vals.forEach(s2=>r.append(el("td","r",N(s2[i]))));
+    tb.append(r);
+  });
+  t.append(tb);s.append(t);return s;
+}
 
-function applyDepth(){
-  document.querySelectorAll("[data-d]").forEach(e=>{
-    e.hidden = Number(e.dataset.d) > DEPTH;
-  });
-  document.querySelectorAll('.ctrls [data-depth]').forEach(b=>
-    b.setAttribute("aria-pressed", String(Number(b.dataset.depth)===DEPTH)));
+document.querySelectorAll("figure.viz").forEach((fig,n)=>{
+  const d=JSON.parse(fig.dataset.chart);
+  if(d.cmp)fig.classList.add("cmp");
+  const head=el("div","viz-head");
+  const ttl=el("div","viz-ttl");
+  ttl.append(el("div","t",fig.dataset.title||"Figure data"));
+  if(fig.dataset.sub)ttl.append(el("div","s",fig.dataset.sub));
+  head.append(ttl);
+  const seg=el("div","seg");
+  seg.setAttribute("role","group");
+  seg.setAttribute("aria-label","Show this figure as a chart or a table");
+  const bc=el("button",null,"Chart"),bt=el("button",null,"Table");
+  bc.type="button";bt.type="button";
+  bc.setAttribute("aria-pressed","true");bt.setAttribute("aria-pressed","false");
+  seg.append(bc,bt);head.append(seg);
+  const chart=el("div","pane");
+  chart.append(d.kind==="bar"?barPane(d):colPane(d));
+  if(d.note)chart.append(el("p","pane-note",d.note));
+  const own=fig.querySelector(":scope > .scroll");
+  const table=el("div","pane t");
+  table.append(own||tablePane(d));table.hidden=true;
+  const show=c=>{chart.hidden=!c;table.hidden=c;
+    bc.setAttribute("aria-pressed",String(c));bt.setAttribute("aria-pressed",String(!c));};
+  bc.addEventListener("click",()=>show(true));
+  bt.addEventListener("click",()=>show(false));
+  fig.prepend(head,chart,table);
+});
+
+const links=[...document.querySelectorAll("nav.toc a")];
+const targets=links.map(a=>document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+if("IntersectionObserver" in window){
+  const o=new IntersectionObserver(es=>{es.forEach(x=>{if(!x.isIntersecting)return;
+    links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+x.target.id));});},
+    {rootMargin:"-10% 0px -80% 0px"});
+  targets.forEach(t=>o.observe(t));
 }
-function applySem(){
-  document.querySelectorAll("[data-semv]").forEach(e=>{ e.hidden = e.dataset.semv!==SEM; });
-  document.querySelectorAll("[data-survey]").forEach(f=>{
-    let note=f.querySelector(".sem-note");
-    if(SEM==="S2"){
-      if(!note){ note=el("p","sem-note","Survey data is Semester 1 only — there was no Semester 2 survey.");
-        f.insertBefore(note,f.firstChild); }
-      note.hidden=false;
-    } else if(note){ note.hidden=true; }
-  });
-  document.querySelectorAll('.ctrls [data-sem]').forEach(b=>
-    b.setAttribute("aria-pressed", String(b.dataset.sem===SEM)));
-}
-document.querySelectorAll('.ctrls [data-depth]').forEach(b=>
-  b.addEventListener("click",()=>{DEPTH=Number(b.dataset.depth);applyDepth();
-    window.scrollTo({top:0,behavior:"smooth"});}));
-document.querySelectorAll('.ctrls [data-sem]').forEach(b=>
-  b.addEventListener("click",()=>{SEM=b.dataset.sem;applySem();}));
-applyDepth(); applySem();
 </script>
 </body>
 </html>
